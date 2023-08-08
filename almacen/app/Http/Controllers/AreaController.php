@@ -81,7 +81,7 @@ class AreaController extends Controller
         $area = Area::find($id);
 
         $campuses = Campus::pluck('descripcion', 'id');
-        $edificios = Edificio::pluck('descripcion', 'id');
+        $edificios = Edificio::pluck('nombre', 'id');
         $niveles = Edificio::pluck('nivel', 'id');
 
         return view('area.edit', compact('area', 'campuses', 'edificios','niveles'));
