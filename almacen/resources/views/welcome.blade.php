@@ -43,7 +43,7 @@
                     height: 100vh;
                 }
                 .cuadro {
-                    width: 400px;
+                    width: 900px;
                     padding: 20px;
                     background-color: #3498db;
                     color: #fff;
