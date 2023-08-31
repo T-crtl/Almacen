@@ -19,11 +19,18 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+//tablas
 Route::resource('equipos', App\Http\Controllers\equipoController::class)->middleware('auth');
 Route::resource('edificios', App\Http\Controllers\EdificioController::class)->middleware('auth');
 Route::resource('campuses', App\Http\Controllers\CampusController::class)->middleware('auth');
 Route::resource('areas', App\Http\Controllers\AreaController::class)->middleware('auth');
 Route::resource('firmas', App\Http\Controllers\FirmaController::class)->middleware('auth');
+
+//consultas
+Route::get('/consultas/resguardo', [App\Http\Controllers\HomeController::class, 'resguardo'])->name('resguardo');
+Route::get('/consultas/area', [App\Http\Controllers\HomeController::class, 'area'])->name('area');
+Route::get('/consultas/articulo', [App\Http\Controllers\HomeController::class, 'articulo'])->name('articulo');
+Route::get('/consultas/division', [App\Http\Controllers\HomeController::class, 'division'])->name('division');
+Route::get('/consultas/traslado', [App\Http\Controllers\HomeController::class, 'traslado'])->name('traslado');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

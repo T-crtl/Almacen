@@ -25,4 +25,25 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function resguardo()
+    {
+        return view('consultas.resguardo');
+    }
+    public function area()
+    {
+        return view('consultas.area');
+    }
+    public function articulo()
+    {
+        return view('consultas.articulo');
+    }
+    public function division()
+    {
+        return view('consultas.division');
+    }
+    public function traslado()
+    {
+        return view('consultas.traslado');
+    }
 }

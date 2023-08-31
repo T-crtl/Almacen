@@ -9,6 +9,7 @@
                     main {
                         padding: 20px;
                     }
+
                     label {
                         display: block;
                         margin-bottom: 10px;
@@ -22,7 +23,7 @@
                         border-radius: 5px;
                     }
 
-                
+
 
                     input[type="submit"]:hover {
                         background-color: #0056b3;
@@ -35,7 +36,7 @@
                         position: fixed;
                         padding: 20px;
                         flex-direction: column;
-                        
+
                     }
 
                     .nav-link2 {
@@ -77,8 +78,9 @@
                     </ul>
                 </nav>
                 <br>
-
-
+                <div>
+                    <h1>articulo</h1>
+                </div>
             </div>
         </div>
     </div>
