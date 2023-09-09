@@ -16,14 +16,29 @@ return new class extends Migration
         Schema::create('equipos', function (Blueprint $table) {
             $table->id();
             $table->text('descripcion');
+            $table->integer('cuenta');
+            $table->integer('numInv');
             $table->string('marca');
             $table->string('modelo');
-            $table->decimal('precio', 8, 2);
-            $table->date('fechaEntrada');
+            $table->string('serie');
+            $table->string('num_ref');
+            $table->string('factura');
+            $table->string('proveedor');
+            $table->string('pedido');
+            $table->string('contrato');
+            $table->string('estado'); 
+            $table->string('resguardo'); 
+            $table->string('resguardo2'); 
+            $table->string('observaciones'); 
+            $table->decimal('precio', 8, 2); //Importe
+            $table->date('fechaEntrada'); //Fecha
+            $table->date('fechaBaja'); //Fecha Baja
+            $table->integer('nomina');
+            $table->integer('nomina2');
             $table->string('estatus');
             $table->string('articulo');
             $table->string('rutaImg');
-            $table->enum('tipoAdq', ['donacion', 'compra', 'transferencia']);
+            $table->enum('tipoAdq', ['donacion', 'compra', 'transferencia']); // Tipo
             $table->integer('areaId')->unsigned();
             $table->timestamps();
         });
@@ -34,6 +49,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('equipos');
     }
 };
