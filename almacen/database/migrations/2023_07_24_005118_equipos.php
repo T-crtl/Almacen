@@ -15,31 +15,31 @@ return new class extends Migration
 
         Schema::create('equipos', function (Blueprint $table) {
             $table->id();
-            $table->text('descripcion');
-            $table->integer('cuenta');
-            $table->integer('numInv');
-            $table->string('marca');
-            $table->string('modelo');
-            $table->string('serie');
-            $table->string('num_ref');
-            $table->string('factura');
-            $table->string('proveedor');
-            $table->string('pedido');
-            $table->string('contrato');
-            $table->string('estado'); 
-            $table->string('resguardo'); 
-            $table->string('resguardo2'); 
-            $table->string('observaciones'); 
-            $table->decimal('precio', 8, 2); //Importe
-            $table->date('fechaEntrada'); //Fecha
-            $table->date('fechaBaja'); //Fecha Baja
-            $table->integer('nomina');
-            $table->integer('nomina2');
-            $table->string('estatus');
-            $table->string('articulo');
-            $table->string('rutaImg');
-            $table->enum('tipoAdq', ['donacion', 'compra', 'transferencia']); // Tipo
-            $table->integer('areaId')->unsigned();
+            $table->text('descripcion')->nullable();
+            $table->integer('cuenta')->nullable();
+            $table->integer('numInv')->nullable();
+            $table->string('marca')->nullable();
+            $table->string('modelo')->nullable();
+            $table->string('serie')->nullable();
+            $table->string('num_ref')->nullable();
+            $table->string('factura')->nullable();
+            $table->string('proveedor')->nullable();
+            $table->string('pedido')->nullable();
+            $table->string('contrato')->nullable();
+            $table->string('estado')->nullable(); 
+            $table->string('resguardo')->nullable(); 
+            $table->string('resguardo2')->nullable(); 
+            $table->string('observaciones')->nullable(); 
+            $table->decimal('precio', 8, 2)->nullable(); //Importe
+            $table->date('fechaEntrada')->nullable(); //Fecha
+            $table->date('fechaBaja')->nullable(); //Fecha Baja
+            $table->integer('nomina')->nullable();
+            $table->integer('nomina2')->nullable();
+            $table->string('estatus')->nullable();
+            $table->string('articulo')->nullable();
+            $table->string('rutaImg')->nullable();
+            $table->enum('tipoAdq', ['donacion', 'compra', 'transferencia'])->nullable(); // Tipo
+            $table->integer('areaId')->unsigned()->nullable();
             $table->timestamps();
         });
     }

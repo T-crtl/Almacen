@@ -25,12 +25,14 @@ Route::resource('edificios', App\Http\Controllers\EdificioController::class)->mi
 Route::resource('campuses', App\Http\Controllers\CampusController::class)->middleware('auth');
 Route::resource('areas', App\Http\Controllers\AreaController::class)->middleware('auth');
 Route::resource('firmas', App\Http\Controllers\FirmaController::class)->middleware('auth');
+Route::resource('safeguards', App\Http\Controllers\SafeguardController::class)->middleware('auth');
+Route::resource('inventories', App\Http\Controllers\InventoryController::class)->middleware('auth');
 
 //consultas
 Route::get('/consultas/resguardo', [App\Http\Controllers\HomeController::class, 'resguardo'])->name('resguardo');
 Route::get('/consultas/area', [App\Http\Controllers\HomeController::class, 'area'])->name('area');
 Route::get('/consultas/articulo', [App\Http\Controllers\HomeController::class, 'articulo'])->name('articulo');
 Route::get('/consultas/division', [App\Http\Controllers\HomeController::class, 'division'])->name('division');
-Route::get('/consultas/traslado', [App\Http\Controllers\HomeController::class, 'traslado'])->name('traslado');
+Route::get('/consultas/traslado', [App\Http\Controllers\HomeController::class, 'traslado'])->name('traslado')->middleware('auth');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
