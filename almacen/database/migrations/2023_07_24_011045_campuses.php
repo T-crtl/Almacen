@@ -14,9 +14,9 @@ return new class extends Migration
         //
         Schema::create('campuses', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('numero');
-            $table->string('descripcion');
-            $table->string('ubicacion');
+            $table->integer('numero');
+            $table->string('descripcion', 30);
+            $table->string('ubicacion', 60);
             $table->timestamps();
         });
     }

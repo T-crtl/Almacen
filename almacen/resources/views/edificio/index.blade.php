@@ -37,9 +37,9 @@
                                         <th>No</th>
                                         
 										<th>Numero</th>
-										<th>Nombre</th>
-										<th>Nivel</th>
-										<th>Areaid</th>
+										<th>Descripcion</th>
+										<th>Niveles o pisos</th>
+										<th>Area</th>
 
                                         <th></th>
                                     </tr>
@@ -50,9 +50,9 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $edificio->numero }}</td>
-											<td>{{ $edificio->nombre }}</td>
-											<td>{{ $edificio->nivel }}</td>
-											<td>{{ $edificio->areaId }}</td>
+											<td>{{ $edificio->descripcion }}</td>
+											<td>{{ $edificio->nivelId }}</td>
+											<td>{{ $edificio->areas->descripcion }}</td>
 
                                             <td>
                                                 <form action="{{ route('edificios.destroy',$edificio->id) }}" method="POST">

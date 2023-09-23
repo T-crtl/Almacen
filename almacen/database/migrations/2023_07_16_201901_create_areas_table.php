@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('areas', function (Blueprint $table) {
             $table->id();
-            $table->string('Descripcion',100);
-            $table->string('Tipo',30);
-            $table->string('Division',30);
-            $table->integer('PlantelID');
-            $table->integer('EdificioID');
-            $table->integer('Nivel');
+            $table->integer('numero');
+            $table->string('descripcion', 30);
+            $table->string('tipo',30);
+            $table->string('division',30);
+            $table->integer('plantelID')->unsigned()->nullable(); //tabla plantel
+            $table->integer('edificioID')->unsigned()->nullable(); //tabla edificio
+            $table->integer('nivel')->nullable(); // tabla edificio
             $table->timestamps();
         });
     }

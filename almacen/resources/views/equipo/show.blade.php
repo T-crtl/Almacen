@@ -21,6 +21,10 @@
                     <div class="card-body">
                         
                         <div class="form-group">
+                            <strong>Numinv:</strong>
+                            {{ $equipo->numInv }}
+                        </div>
+                        <div class="form-group">
                             <strong>Descripcion:</strong>
                             {{ $equipo->descripcion }}
                         </div>
@@ -31,6 +35,10 @@
                         <div class="form-group">
                             <strong>Modelo:</strong>
                             {{ $equipo->modelo }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Serie:</strong>
+                            {{ $equipo->serie }}
                         </div>
                         <div class="form-group">
                             <strong>Precio:</strong>

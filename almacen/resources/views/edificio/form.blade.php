@@ -7,18 +7,18 @@
             {!! $errors->first('numero', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('nombre') }}
-            {{ Form::text('nombre', $edificio->nombre, ['class' => 'form-control' . ($errors->has('nombre') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
-            {!! $errors->first('nombre', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('descripcion') }}
+            {{ Form::text('descripcion', $edificio->descripcion, ['class' => 'form-control' . ($errors->has('descripcion') ? ' is-invalid' : ''), 'placeholder' => 'Descripcion']) }}
+            {!! $errors->first('descripcion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('nivel') }}
-            {{ Form::text('nivel', $edificio->nivel, ['class' => 'form-control' . ($errors->has('nivel') ? ' is-invalid' : ''), 'placeholder' => 'Nivel']) }}
-            {!! $errors->first('nivel', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('nivelId') }}
+            {{ Form::text('nivelId', $edificio->nivelId, ['class' => 'form-control' . ($errors->has('nivelId') ? ' is-invalid' : ''), 'placeholder' => 'Nivelid']) }}
+            {!! $errors->first('nivelId', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('areaId') }}
-            {{ Form::text('areaId', $edificio->areaId, ['class' => 'form-control' . ($errors->has('areaId') ? ' is-invalid' : ''), 'placeholder' => 'Areaid']) }}
+            {{ Form::select('areaId', $areas, $edificio->areaId, ['class' => 'form-control' . ($errors->has('areaId') ? ' is-invalid' : ''), 'placeholder' => 'Areaid']) }}
             {!! $errors->first('areaId', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 

@@ -21,28 +21,32 @@
                     <div class="card-body">
                         
                         <div class="form-group">
+                            <strong>Numero:</strong>
+                            {{ $area->numero }}
+                        </div>
+                        <div class="form-group">
                             <strong>Descripcion:</strong>
-                            {{ $area->Descripcion }}
+                            {{ $area->descripcion }}
                         </div>
                         <div class="form-group">
                             <strong>Tipo:</strong>
-                            {{ $area->Tipo }}
+                            {{ $area->tipo }}
                         </div>
                         <div class="form-group">
                             <strong>Division:</strong>
-                            {{ $area->Division }}
+                            {{ $area->division }}
                         </div>
                         <div class="form-group">
                             <strong>Plantelid:</strong>
-                            {{ $area->PlantelID }}
+                            {{ $area->plantelID }}
                         </div>
                         <div class="form-group">
                             <strong>Edificioid:</strong>
-                            {{ $area->EdificioID }}
+                            {{ $area->edificioID }}
                         </div>
                         <div class="form-group">
                             <strong>Nivel:</strong>
-                            {{ $area->Nivel }}
+                            {{ $area->nivel }}
                         </div>
 
                     </div>

@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
-
         Schema::create('edificios', function (Blueprint $table) {
             $table->id();
             $table->integer('numero');
-            $table->string('nombre');
-            $table->integer('nivel');
-            $table->integer('areaId')->unsigned();
+            $table->string('descripcion', 30);
+            $table->integer('nivelId')->nullable();
+            $table->integer('areaId')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('edificios');
     }
 };

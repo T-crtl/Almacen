@@ -34,11 +34,10 @@ class AreaController extends Controller
     public function create()
     {
         $area = new Area();
-        $campuses = Campus::pluck('descripcion', 'id');
-        $edificios = Edificio::pluck('nombre', 'id');
-        $niveles = Edificio::pluck('nivel', 'id');
+        $campuses = Campus::pluck('descripcion','id');
+        $edificios = Edificio::pluck('descripcion', 'id');
 
-        return view('area.create', compact('area', 'campuses', 'edificios','niveles'));
+        return view('area.create', compact('area', 'campuses', 'edificios'));
     }
 
     /**
@@ -79,12 +78,11 @@ class AreaController extends Controller
     public function edit($id)
     {
         $area = Area::find($id);
+        $campuses = Campus::pluck('descripcion','id');
+        $edificios = Edificio::pluck('descripcion', 'id');
 
-        $campuses = Campus::pluck('descripcion', 'id');
-        $edificios = Edificio::pluck('nombre', 'id');
-        $niveles = Edificio::pluck('nivel', 'id');
 
-        return view('area.edit', compact('area', 'campuses', 'edificios','niveles'));
+        return view('area.edit', compact('area', 'campuses', 'edificios'));
     }
 
     /**

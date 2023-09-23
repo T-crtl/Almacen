@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Firma
+    Personale
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Firma') }}
+                                {{ __('Personale') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('firmas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('personales.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,28 +36,40 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Nombre del Personal</th>
+										<th>Nomina</th>
+										<th>Nombre</th>
+										<th>Adscripcion</th>
+										<th>Tipo Contrato</th>
+										<th>Plantelid</th>
 										<th>Funcion</th>
-										<th>Plantel</th>
-										<th>Nivel de puesto</th>
+										<th>Correo</th>
+										<th>Rutaimg</th>
+										<th>Estatus</th>
+										<th>Nivel Educativo</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($firmas as $firma)
+                                    @foreach ($personales as $personale)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $firma->NombrePersonal }}</td>
-											<td>{{ $firma->Funcion }}</td>
-											<td>{{ $firma->campuses->descripcion }}</td>
-											<td>{{ $firma->NivelPuesto }}</td>
+											<td>{{ $personale->nomina }}</td>
+											<td>{{ $personale->nombre }}</td>
+											<td>{{ $personale->adscripcion }}</td>
+											<td>{{ $personale->tipo_contrato }}</td>
+											<td>{{ $personale->plantelId }}</td>
+											<td>{{ $personale->funcion }}</td>
+											<td>{{ $personale->correo }}</td>
+											<td>{{ $personale->rutaImg }}</td>
+											<td>{{ $personale->estatus }}</td>
+											<td>{{ $personale->nivel_educativo }}</td>
 
                                             <td>
-                                                <form action="{{ route('firmas.destroy',$firma->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('firmas.show',$firma->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('firmas.edit',$firma->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('personales.destroy',$personale->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('personales.show',$personale->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('personales.edit',$personale->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -70,7 +82,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $firmas->links() !!}
+                {!! $personales->links() !!}
             </div>
         </div>
     </div>

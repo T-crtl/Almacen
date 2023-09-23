@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Equipo;
+use App\Models\Area;
 use Illuminate\Http\Request;
 
 /**
@@ -19,7 +20,6 @@ class EquipoController extends Controller
     public function index()
     {
         $equipos = Equipo::paginate();
-
         return view('equipo.index', compact('equipos'))
             ->with('i', (request()->input('page', 1) - 1) * $equipos->perPage());
     }
@@ -32,7 +32,8 @@ class EquipoController extends Controller
     public function create()
     {
         $equipo = new Equipo();
-        return view('equipo.create', compact('equipo'));
+        $areas = Area::pluck('descripcion', 'id');
+        return view('equipo.create', compact('equipo', 'areas'));
     }
 
     /**
@@ -73,8 +74,9 @@ class EquipoController extends Controller
     public function edit($id)
     {
         $equipo = Equipo::find($id);
+        $areas = Area::pluck('descripcion', 'id');
 
-        return view('equipo.edit', compact('equipo'));
+        return view('equipo.edit', compact('equipo', 'areas'));
     }
 
     /**

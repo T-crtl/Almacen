@@ -35,31 +35,20 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
+                                        
+										<th>Numero de Inventario</th>
 										<th>Descripcion</th>
-                                        <th>Cuenta</th>
-                                        <th>Numero de inventario</th>
 										<th>Marca</th>
 										<th>Modelo</th>
-                                        <th>Serie</th>
-                                        <th>No.Referencia</th>
-                                        <th>Factura</th>
-                                        <th>Proveedor</th>
-                                        <th>Pedido</th>
-                                        <th>Contrato</th>
-                                        <th>Estado</th>
-                                        <th>Resguardo</th>
-                                        <th>Resguardo 2</th>
-                                        <th>Observaciones</th>
+										<th>Serie</th>
 										<th>Precio</th>
-										<th>Fecha de Entrada</th>
-                                        <th>Fecha de Baja</th>
-                                        <th>Nomina</th>
-                                        <th>Nomina 2</th>
+										<th>Fecha entrada</th>
 										<th>Estatus</th>
 										<th>Articulo</th>
-										<th>Rutaimg</th>
-										<th>Tipoadq</th>
-										<th>Areaid</th>
+										<th>Imagen</th>
+										<th>Tipo adquisicion</th>
+										<th>Area</th>
+
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -68,31 +57,18 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
+											<td>{{ $equipo->numInv }}</td>
 											<td>{{ $equipo->descripcion }}</td>
-                                            <td>{{ $equipo->cuenta }}</td>
-                                            <td>{{ $equipo->numInv }}</td>
-                                            <td>{{ $equipo->marca }}</td>
+											<td>{{ $equipo->marca }}</td>
 											<td>{{ $equipo->modelo }}</td>
-                                            <td>{{ $equipo->serie }}</td>
-                                            <td>{{ $equipo->num_ref }}</td>
-                                            <td>{{ $equipo->factura }}</td>
-                                            <td>{{ $equipo->proveedor }}</td>
-                                            <td>{{ $equipo->pedido }}</td>
-                                            <td>{{ $equipo->contrato }}</td>
-                                            <td>{{ $equipo->estado }}</td>
-                                            <td>{{ $equipo->resguardo }}</td>
-                                            <td>{{ $equipo->resguardo2}}</td>
-                                            <td>{{ $equipo->observaciones }}</td>
+											<td>{{ $equipo->serie }}</td>
 											<td>{{ $equipo->precio }}</td>
 											<td>{{ $equipo->fechaEntrada }}</td>
-                                            <td>{{ $equipo->fechaBaja }}</td>
-                                            <td>{{ $equipo->nomina }}</td>
-                                            <td>{{ $equipo->nomina2 }}</td>
 											<td>{{ $equipo->estatus }}</td>
 											<td>{{ $equipo->articulo }}</td>
 											<td>{{ $equipo->rutaImg }}</td>
 											<td>{{ $equipo->tipoAdq }}</td>
-											<td>{{ $equipo->areaId }}</td>
+											<td>{{ $equipo->areas->descripcion }}</td>
 
                                             <td>
                                                 <form action="{{ route('equipos.destroy',$equipo->id) }}" method="POST">

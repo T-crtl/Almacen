@@ -71,9 +71,7 @@
                                 <a class="nav-link" href="{{ route('safeguards.index') }}">{{ __('resguardos') }}</a>
                             </li>
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('inventories.index') }}">{{ __('inventories') }}</a>
-                            </li>
+                            
 
                             
                     </ul>

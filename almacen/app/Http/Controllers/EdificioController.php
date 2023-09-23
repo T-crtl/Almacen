@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Edificio;
+use App\Models\Area;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +33,8 @@ class EdificioController extends Controller
     public function create()
     {
         $edificio = new Edificio();
-        return view('edificio.create', compact('edificio'));
+        $areas = Area::pluck('descripcion', 'id');
+        return view('edificio.create', compact('edificio', 'areas'));
     }
 
     /**
@@ -73,8 +75,9 @@ class EdificioController extends Controller
     public function edit($id)
     {
         $edificio = Edificio::find($id);
+        $areas = Area::pluck('descripcion', 'id');
 
-        return view('edificio.edit', compact('edificio'));
+        return view('edificio.edit', compact('edificio', 'areas'));
     }
 
     /**

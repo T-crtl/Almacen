@@ -36,12 +36,13 @@
                                     <tr>
                                         <th>No</th>
                                         
+										<th>Numero</th>
 										<th>Descripcion</th>
 										<th>Tipo</th>
 										<th>Division</th>
-										<th>Plantelid</th>
-										<th>Edificioid</th>
-										<th>Nivel</th>
+										<th>Plantel</th>
+										<th>Edificio</th>
+										<th>Nivel o Piso</th>
 
                                         <th></th>
                                     </tr>
@@ -51,12 +52,13 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $area->Descripcion }}</td>
-											<td>{{ $area->Tipo }}</td>
-											<td>{{ $area->Division }}</td>
-											<td>{{ $area->campus->descripcion }}</td>
-											<td>{{ $area->edificio->nombre }}</td>
-											<td>{{ $area->edificio->nivel }}</td>
+											<td>{{ $area->numero }}</td>
+											<td>{{ $area->descripcion }}</td>
+											<td>{{ $area->tipo }}</td>
+											<td>{{ $area->division }}</td>
+											<td>{{ $area->campuses->descripcion }}</td>
+											<td>{{ $area->edificios->descripcion }}</td>
+											<td>{{ $area->nivel }}</td>
 
                                             <td>
                                                 <form action="{{ route('areas.destroy',$area->id) }}" method="POST">

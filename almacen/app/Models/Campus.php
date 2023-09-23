@@ -35,10 +35,13 @@ class Campus extends Model
      */
     protected $fillable = ['numero','descripcion','ubicacion'];
 
-    public function area(){
-      return $this->hasMany('App\Models\Area', 'PlantelID', 'id');
+    /**
+    *@return \Illuminate\Database\Eloquent\Relations\HasMany
+    */
+    public function Location()
+    {
+      return $this->hasMany('App\Models\Firma', 'PlantelID', 'id');
+      return $this->hasMany('App\Models\Area', 'plantelID', 'id');
     }
-
-
 
 }

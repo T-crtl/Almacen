@@ -25,12 +25,12 @@
                             {{ $edificio->numero }}
                         </div>
                         <div class="form-group">
-                            <strong>Nombre:</strong>
-                            {{ $edificio->nombre }}
+                            <strong>Descripcion:</strong>
+                            {{ $edificio->descripcion }}
                         </div>
                         <div class="form-group">
-                            <strong>Nivel:</strong>
-                            {{ $edificio->nivel }}
+                            <strong>Nivelid:</strong>
+                            {{ $edificio->nivelId }}
                         </div>
                         <div class="form-group">
                             <strong>Areaid:</strong>

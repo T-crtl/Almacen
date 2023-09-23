@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('firmas', function (Blueprint $table) {
             $table->id();
-            $table->string('NombrePersonal');
-            $table->string('Funcion');
-            $table->smallInteger('PlantelID');
-            $table->smallInteger('NivelPuesto');
+            $table->string('NombrePersonal', 100);
+            $table->string('Funcion', 30);
+            $table->integer('PlantelID')->unsigned(); // tabla plantel
+            $table->string('NivelPuesto', 30);
             $table->timestamps();
         });
     }

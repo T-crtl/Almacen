@@ -37,7 +37,11 @@ class Firma extends Model
      */
     protected $fillable = ['NombrePersonal','Funcion','PlantelID','NivelPuesto'];
 
-    public function campus(){
+    /**
+    *@return \Illuminate\Database\Eloquent\Relations\HasOne
+    */
+    public function campuses()
+    {
       return $this->hasOne('App\Models\Campus', 'id', 'PlantelID');
     }
 

@@ -8,12 +8,13 @@ use Illuminate\Database\Eloquent\Model;
  * Class Area
  *
  * @property $id
- * @property $Descripcion
- * @property $Tipo
- * @property $Division
- * @property $PlantelID
- * @property $EdificioID
- * @property $Nivel
+ * @property $numero
+ * @property $descripcion
+ * @property $tipo
+ * @property $division
+ * @property $plantelID
+ * @property $edificioID
+ * @property $nivel
  * @property $created_at
  * @property $updated_at
  *
@@ -24,12 +25,13 @@ class Area extends Model
 {
     
     static $rules = [
-		'Descripcion' => 'required',
-		'Tipo' => 'required',
-		'Division' => 'required',
-		'PlantelID' => 'required',
-		'EdificioID' => 'required',
-		'Nivel' => 'required',
+		'numero' => 'required',
+		'descripcion' => 'required',
+		'tipo' => 'required',
+		'division' => 'required',
+		'plantelID' => 'required',
+		'edificioID' => 'required',
+		'nivel' => 'required',
     ];
 
     protected $perPage = 20;
@@ -39,16 +41,29 @@ class Area extends Model
      *
      * @var array
      */
-    protected $fillable = ['Descripcion','Tipo','Division','PlantelID','EdificioID','Nivel'];
+    protected $fillable = ['numero','descripcion','tipo','division','plantelID','edificioID','nivel'];
 
-    public function campus(){
-      return $this->hasOne('App\Models\Campus', 'id', 'PlantelID');
+    /**
+    *@return \Illuminate\Database\Eloquent\Relations\HasMany
+    */
+    public function Location()
+    {
+      return $this->hasMany('App\Models\Equipo', 'areaId', 'id');
+      return $this->hasMany('App\Models\Edificio', 'areaId', 'id');
     }
 
-    public function edificio(){
-      return $this->hasOne('App\Models\Edificio', 'id', 'EdificioID');
+    /**
+    *@return \Illuminate\Database\Eloquent\Relations\HasOne
+    */
+    public function campuses()
+    {
+      return $this->hasOne('App\Models\Campus', 'id', 'plantelID');
     }
 
+    public function edificios()
+    {
+      return $this->hasOne('App\Models\Edificio', 'id', 'edificioID');
+    }
 
 
 }

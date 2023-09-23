@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Firma;
-use App\Models\Campus;
+use App\Models\Personale;
 use Illuminate\Http\Request;
 
 /**
- * Class FirmaController
+ * Class PersonaleController
  * @package App\Http\Controllers
  */
-class FirmaController extends Controller
+class PersonaleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,10 +18,10 @@ class FirmaController extends Controller
      */
     public function index()
     {
-        $firmas = Firma::paginate();
+        $personales = Personale::paginate();
 
-        return view('firma.index', compact('firmas'))
-            ->with('i', (request()->input('page', 1) - 1) * $firmas->perPage());
+        return view('personale.index', compact('personales'))
+            ->with('i', (request()->input('page', 1) - 1) * $personales->perPage());
     }
 
     /**
@@ -32,10 +31,8 @@ class FirmaController extends Controller
      */
     public function create()
     {
-        $firma = new Firma();
-        $campuses = Campus::pluck('descripcion','id');
-
-        return view('firma.create', compact('firma','campuses'));
+        $personale = new Personale();
+        return view('personale.create', compact('personale'));
     }
 
     /**
@@ -46,12 +43,12 @@ class FirmaController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Firma::$rules);
+        request()->validate(Personale::$rules);
 
-        $firma = Firma::create($request->all());
+        $personale = Personale::create($request->all());
 
-        return redirect()->route('firmas.index')
-            ->with('success', 'Firma created successfully.');
+        return redirect()->route('personales.index')
+            ->with('success', 'Personale created successfully.');
     }
 
     /**
@@ -62,9 +59,9 @@ class FirmaController extends Controller
      */
     public function show($id)
     {
-        $firma = Firma::find($id);
+        $personale = Personale::find($id);
 
-        return view('firma.show', compact('firma'));
+        return view('personale.show', compact('personale'));
     }
 
     /**
@@ -75,27 +72,26 @@ class FirmaController extends Controller
      */
     public function edit($id)
     {
-        $firma = Firma::find($id);
-        $campuses = Campus::pluck('descripcion','id');
+        $personale = Personale::find($id);
 
-        return view('firma.edit', compact('firma', 'campuses'));
+        return view('personale.edit', compact('personale'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  Firma $firma
+     * @param  Personale $personale
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Firma $firma)
+    public function update(Request $request, Personale $personale)
     {
-        request()->validate(Firma::$rules);
+        request()->validate(Personale::$rules);
 
-        $firma->update($request->all());
+        $personale->update($request->all());
 
-        return redirect()->route('firmas.index')
-            ->with('success', 'Firma updated successfully');
+        return redirect()->route('personales.index')
+            ->with('success', 'Personale updated successfully');
     }
 
     /**
@@ -105,9 +101,9 @@ class FirmaController extends Controller
      */
     public function destroy($id)
     {
-        $firma = Firma::find($id)->delete();
+        $personale = Personale::find($id)->delete();
 
-        return redirect()->route('firmas.index')
-            ->with('success', 'Firma deleted successfully');
+        return redirect()->route('personales.index')
+            ->with('success', 'Personale deleted successfully');
     }
 }

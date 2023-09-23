@@ -8,9 +8,11 @@ use Illuminate\Database\Eloquent\Model;
  * Class Equipo
  *
  * @property $id
+ * @property $numInv
  * @property $descripcion
  * @property $marca
  * @property $modelo
+ * @property $serie
  * @property $precio
  * @property $fechaEntrada
  * @property $estatus
@@ -28,31 +30,13 @@ class Equipo extends Model
 {
     
     static $rules = [
-		'descripcion' => 'required',
-		'cuenta' => 'required',
 		'numInv' => 'required',
+		'descripcion' => 'required',
 		'marca' => 'required',
 		'modelo' => 'required',
 		'serie' => 'required',
-		'num_ref' => 'required',
-		'factura' => 'required',
-		'proveedor' => 'required',
-		'pedido' => 'required',
-		'contrato' => 'required',
-		'estado' => 'required',
-		'resguardo' => 'required',
-		'resguardo2' => 'required',
-		'observaciones' => 'required',
-		'precio' => 'required',
-		'fechaEntrada' => 'required',
-		'fechaBaja' => 'required',
-		'nomina' => 'required',
-		'nomina2' => 'required',
 		'estatus' => 'required',
 		'articulo' => 'required',
-		'rutaImg' => 'required',
-		'tipoAdq' => 'required',
-		'areaId' => 'required',
     ];
 
     protected $perPage = 20;
@@ -62,8 +46,14 @@ class Equipo extends Model
      *
      * @var array
      */
-    protected $fillable = ['descripcion','cuenta','numInv','marca','modelo','serie','num_ref','factura','proveedor','pedido','contrato','estado','resguardo','resguardo2','observaciones','precio','fechaEntrada','fechaBaja','nomina','nomina2','estatus','articulo','rutaImg','tipoAdq','areaId'];
+    protected $fillable = ['numInv','descripcion','marca','modelo','serie','precio','fechaEntrada','estatus','articulo','rutaImg','tipoAdq','areaId'];
 
-
+    /**
+    *@return \Illuminate\Database\Eloquent\Relations\HasOne
+    */
+    public function areas()
+    {
+      return $this->hasOne('App\Models\Area', 'id', 'areaId');
+    }
 
 }

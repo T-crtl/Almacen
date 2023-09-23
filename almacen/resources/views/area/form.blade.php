@@ -2,34 +2,39 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('Descripcion') }}
-            {{ Form::text('Descripcion', $area->Descripcion, ['class' => 'form-control' . ($errors->has('Descripcion') ? ' is-invalid' : ''), 'placeholder' => 'Descripcion']) }}
-            {!! $errors->first('Descripcion', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('numero') }}
+            {{ Form::text('numero', $area->numero, ['class' => 'form-control' . ($errors->has('numero') ? ' is-invalid' : ''), 'placeholder' => 'Numero']) }}
+            {!! $errors->first('numero', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('Tipo') }}
-            {{ Form::text('Tipo', $area->Tipo, ['class' => 'form-control' . ($errors->has('Tipo') ? ' is-invalid' : ''), 'placeholder' => 'Tipo']) }}
-            {!! $errors->first('Tipo', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('descripcion') }}
+            {{ Form::text('descripcion', $area->descripcion, ['class' => 'form-control' . ($errors->has('descripcion') ? ' is-invalid' : ''), 'placeholder' => 'Descripcion']) }}
+            {!! $errors->first('descripcion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('Division') }}
-            {{ Form::text('Division', $area->Division, ['class' => 'form-control' . ($errors->has('Division') ? ' is-invalid' : ''), 'placeholder' => 'Division']) }}
-            {!! $errors->first('Division', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('tipo') }}
+            {{ Form::text('tipo', $area->tipo, ['class' => 'form-control' . ($errors->has('tipo') ? ' is-invalid' : ''), 'placeholder' => 'Tipo']) }}
+            {!! $errors->first('tipo', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('PlantelID') }}
-            {{ Form::select('PlantelID', $campuses, $area->PlantelID, ['class' => 'form-control' . ($errors->has('PlantelID') ? ' is-invalid' : ''), 'placeholder' => 'Plantelid']) }}
-            {!! $errors->first('PlantelID', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('division') }}
+            {{ Form::text('division', $area->division, ['class' => 'form-control' . ($errors->has('division') ? ' is-invalid' : ''), 'placeholder' => 'Division']) }}
+            {!! $errors->first('division', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('EdificioID') }}
-            {{ Form::select('EdificioID', $edificios, $area->EdificioID, ['class' => 'form-control' . ($errors->has('EdificioID') ? ' is-invalid' : ''), 'placeholder' => 'Edificioid']) }}
-            {!! $errors->first('EdificioID', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('plantelID') }}
+            {{ Form::select('plantelID', $campuses, $area->plantelID, ['class' => 'form-control' . ($errors->has('plantelID') ? ' is-invalid' : ''), 'placeholder' => 'Plantelid']) }}
+            {!! $errors->first('plantelID', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('Nivel') }}
-            {{ Form::select('Nivel', $niveles, $area->Nivel, ['class' => 'form-control' . ($errors->has('Nivel') ? ' is-invalid' : ''), 'placeholder' => 'Nivel']) }}
-            {!! $errors->first('Nivel', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('edificioID') }}
+            {{ Form::select('edificioID', $edificios, $area->edificioID, ['class' => 'form-control' . ($errors->has('edificioID') ? ' is-invalid' : ''), 'placeholder' => 'Edificioid']) }}
+            {!! $errors->first('edificioID', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('nivel') }}
+            {{ Form::text('nivel', $area->nivel, ['class' => 'form-control' . ($errors->has('nivel') ? ' is-invalid' : ''), 'placeholder' => 'Nivel']) }}
+            {!! $errors->first('nivel', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
     </div>
