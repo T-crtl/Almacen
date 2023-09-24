@@ -73,7 +73,7 @@
                         <li><a href="{{ route('traslado') }}" class="nav-link2">Traslado</a></li>
                         <li><a href="{{ route('division') }}" class="nav-link2">Division o departamento</a></li>
                         <li><a href="{{ route('articulo') }}" class="nav-link2">Articulo</a></li>
-                        <li><a href="{{ route('area') }}" class="nav-link2">Area</a></li>
+                        <li><a href="{{ route('consultas') }}" class="nav-link2">Area</a></li>
                     </ul>
                 </nav>
                 <br>

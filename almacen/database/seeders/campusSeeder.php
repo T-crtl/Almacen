@@ -19,5 +19,15 @@ class campusSeeder extends Seeder
             'descripcion' => 'Plantel Tonala',
             'ubicacion' => 'Loma Dorada Tonala Centro',
         ]);
+        Campus::create([
+            'numero' => 2,
+            'descripcion' => 'Plantel Colomos',
+            'ubicacion' => 'Zapopan',
+        ]);
+        Campus::create([
+            'numero' => 3,
+            'descripcion' => 'Plantel Rio Santiago',
+            'ubicacion' => 'Tonala',
+        ]);
     }
 }

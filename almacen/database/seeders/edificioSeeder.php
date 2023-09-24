@@ -20,5 +20,29 @@ class edificioSeeder extends Seeder
             'nivelId' => 1,
             'areaId' => 1,
         ]);
+        Edificio::create([
+            'numero' => 2,
+            'descripcion' => 'Edificio K',
+            'nivelId' => 2,
+            'areaId' => 3,
+        ]);
+        Edificio::create([
+            'numero' => 2,
+            'descripcion' => 'Edificio I',
+            'nivelId' => 3,
+            'areaId' => 1,
+        ]);
+        Edificio::create([
+            'numero' => 2,
+            'descripcion' => 'Edificio C',
+            'nivelId' => 1,
+            'areaId' => 1,
+        ]);
+        Edificio::create([
+            'numero' => 4,
+            'descripcion' => 'Edificio L',
+            'nivelId' => 1,
+            'areaId' => 4,
+        ]);
     }
 }

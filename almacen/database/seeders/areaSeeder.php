@@ -32,5 +32,23 @@ class areaSeeder extends Seeder
             'edificioID' => 1,
             'nivel' => 1,
         ]);
+        Area::create([
+            'numero' => 3,
+            'descripcion' => 'Div Electronica',
+            'tipo' => 'Electronica',
+            'division' => 'Electronica',
+            'plantelID' => 2,
+            'edificioID' => 2,
+            'nivel' => 2,
+        ]);
+        Area::create([
+            'numero' => 4,
+            'descripcion' => 'DEPTO. RECURSOS MATERIALES',
+            'tipo' => 'General',
+            'division' => 'General',
+            'plantelID' => 1,
+            'edificioID' => 4,
+            'nivel' => 2,
+        ]);
     }
 }
