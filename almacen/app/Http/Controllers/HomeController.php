@@ -32,7 +32,7 @@ class HomeController extends Controller
     }
     public function area()
     {
-        return view('consultas.area');
+        return view('consultas.areaConsultas');
     }
     public function articulo()
     {

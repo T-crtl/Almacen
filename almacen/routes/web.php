@@ -30,10 +30,12 @@ Route::resource('inventories', App\Http\Controllers\InventoryController::class)-
 Route::resource('personale', App\Http\Controllers\PersonaleController::class)->middleware('auth');
 
 //consultas
-Route::get('/consultas/resguardo', [App\Http\Controllers\ConsultaController::class, 'resguardo'])->name('resguardo');
-Route::get('consultas', [App\Http\Controllers\ConsultaController::class, 'consultas'])->name('consultas');
+Route::get('/consultas/resguardo', [App\Http\Controllers\HomeController::class, 'resguardo'])->name('resguardo');
+//Route::get('consultas/areaConsultas', [App\Http\Controllers\ConsultaController::class, 'areaConsultas'])->name('areaConsultas');
+Route::resource('areaConsulta', App\Http\Controllers\AreaConsultaController::class)->middleware('auth');
 Route::get('/consultas/articulo', [App\Http\Controllers\HomeController::class, 'articulo'])->name('articulo');
 Route::get('/consultas/division', [App\Http\Controllers\HomeController::class, 'division'])->name('division');
 Route::get('/consultas/traslado', [App\Http\Controllers\HomeController::class, 'traslado'])->name('traslado')->middleware('auth');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
