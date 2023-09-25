@@ -27,7 +27,7 @@ class equipoSeeder extends Seeder
             'estatus' => 'activo',
             'articulo' => 'articulo',
             'rutaImg' => 'imagen.png',
-            'tipoAdq' => 'compra',
+            'tipoAdq' => 1,
             'areaId' => 1,
         ]);
         $fechaEspecifica = Carbon::createFromDate(2001, 3, 24);
@@ -42,7 +42,7 @@ class equipoSeeder extends Seeder
             'estatus' => 'activo',
             'articulo' => 'articulo',
             'rutaImg' => 'imagen.png',
-            'tipoAdq' => 'compra',
+            'tipoAdq' => 2,
             'areaId' => 2,
         ]);
         $fechaEspecifica = Carbon::createFromDate(2010, 2, 10);
@@ -57,7 +57,7 @@ class equipoSeeder extends Seeder
             'estatus' => 'activo',
             'articulo' => 'articulo',
             'rutaImg' => 'imagen.png',
-            'tipoAdq' => 'compra',
+            'tipoAdq' => 1,
             'areaId' => 1,
         ]);
         $fechaEspecifica = Carbon::createFromDate(2012, 4, 11);
@@ -72,7 +72,7 @@ class equipoSeeder extends Seeder
             'estatus' => 'activo',
             'articulo' => 'articulo',
             'rutaImg' => 'imagen.png',
-            'tipoAdq' => 'compra',
+            'tipoAdq' => 1,
             'areaId' => 4,
         ]);
     }

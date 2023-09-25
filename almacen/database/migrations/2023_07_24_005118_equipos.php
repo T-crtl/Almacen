@@ -25,7 +25,13 @@ return new class extends Migration
             $table->string('estatus', 20);
             $table->string('articulo', 50);
             $table->string('rutaImg')->nullable();
-            $table->enum('tipoAdq', ['donacion', 'compra', 'transferencia'])->nullable(); // Tipo
+
+            $table->integer('tipoAdq')->unsigned(); // Campo Relacional
+            $table->foreign('tipoAdq')
+                ->references('id')
+                ->on('tipoAdquisicion') //Llave foranea
+                ->onDelete("cascade"); 
+            //$table->enum('tipoAdq', ['donacion', 'compra', 'transferencia'])->nullable(); // Tipo
 
             $table->integer('areaId')->unsigned()->nullable();
 
