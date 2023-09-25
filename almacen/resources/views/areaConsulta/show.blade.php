@@ -36,14 +36,14 @@
                         </div>
                         <div class="form-group">
                             <strong>Plantel:</strong>
-                            {{ $area->plantelID }}
+                            {{ $area->campuses->descripcion }}
                         </div>
                         <div class="form-group">
                             <strong>Edificio:</strong>
-                            {{ $area->edificioID }}
+                            {{ $area->edificios->descripcion }}
                         </div>
                         <div class="form-group">
-                            <strong>Nivel:</strong>
+                            <strong>Piso:</strong>
                             {{ $area->nivel }}
                         </div>
 

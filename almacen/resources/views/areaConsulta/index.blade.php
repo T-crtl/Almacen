@@ -15,6 +15,20 @@
                             <span id="card_title">
                                 
                                 <h1>Area</h1>
+                                <form action="{{ route('areaConsulta.index') }}" method="GET">
+                                    <input type="text" name="search" placeholder="Buscar por Division">
+                                    
+                                    <select name="plantel">
+                                        <option value="">Seleccionar División</option>
+                                        <option value="1">Plantel Tonala</option>
+                                        <option value="2">Plantel Colomos</option>
+                                        <option value="3">Plantel Rio Santiago</option>
+                                        <!-- Agrega más opciones según sea necesario -->
+                                    </select>
+                                    <button type="submit">Buscar</button>
+                                    <button type="submit">Inicio</button>
+                                </form>
+
                             </span>
 
 
@@ -59,6 +73,7 @@
 											<td>{{ $area->nivel }}</td>
 
                                             <td>
+                                                
                                                 <form action="{{ route('areas.destroy',$area->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('areaConsulta.show',$area->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
                                                     
@@ -68,10 +83,12 @@
                                                 </form>
                                             </td>
                                         </tr>
+                                        
                                     @endforeach
                                 </tbody>
                             </table>
                         </div>
+                        
                     </div>
                 </div>
                 {!! $areas->links() !!}
