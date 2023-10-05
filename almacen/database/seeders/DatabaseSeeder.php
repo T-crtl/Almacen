@@ -19,11 +19,12 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        $this->call(tipoAdquisicion::class);
         $this->call(areaSeeder::class);
         $this->call(campusSeeder::class);
         $this->call(edificioSeeder::class);
         $this->call(equipoSeeder::class);
-        $this->call(tipoAdquisicion::class);
+        
 
         User::create([
             'name' => 'Abraham Duran',
