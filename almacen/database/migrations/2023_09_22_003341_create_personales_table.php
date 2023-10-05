@@ -17,13 +17,18 @@ return new class extends Migration
             $table->string('nombre', 100);
             $table->string('adscripcion');
             $table->string('tipo_contrato');
-            $table->integer('plantelId');
             $table->string('funcion');
             $table->string('password');
             $table->string('correo');
             $table->string('rutaImg')->nullable();
             $table->string('estatus');
             $table->string('nivel_educativo', 25);
+
+            $table->integer('plantelId')->unsigned(); // Campo Relacional
+            $table->foreign('plantelId')
+                ->references('id')
+                ->on('campuses') //Llave foranea
+                ->onDelete("cascade"); 
             $table->timestamps();
         });
     }
