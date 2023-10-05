@@ -15,18 +15,18 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <!-- MODIFICACION INCLUDE BOOTSTRAP - DAVID -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 
     <!-- Scripts -->
     <!-- @vite(['almacen/resources/sass/app.scss', 'almacen/resources/js/app.js']) -->
     <!-- MODIFICACION INCLUDE BOOTSTRAP - DAVID -->
     @yield('contenido')
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" 
-    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+    </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    
+
 </head>
 
 <body>
@@ -34,8 +34,8 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('home') }}">Sistema de Inventarios</a>
-                    <!-- {{ config('app.name', 'Sistema de Inventarios') }} -->
-                
+                <!-- {{ config('app.name', 'Sistema de Inventarios') }} -->
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -71,9 +71,9 @@
                                 <a class="nav-link" href="{{ route('safeguards.index') }}">{{ __('resguardos') }}</a>
                             </li>
 
-                            
 
-                            
+
+
                     </ul>
                     @endif
 
@@ -138,6 +138,7 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
+
         input[type="submit"]:hover {
             background-color: #0056b3;
         }
@@ -180,16 +181,17 @@
             color: white;
         }
     </style>
-
-    <nav class="nav2">
-        <ul>
-            <li><a href="{{ route('resguardo') }}" class="nav-link2">Resguardo</a></li>
-            <li><a href="{{ route('traslado') }}" class="nav-link2">Traslado</a></li>
-            <li><a href="{{ route('division') }}" class="nav-link2">Division o departamento</a></li>
-            <li><a href="{{ route('articulo') }}" class="nav-link2">Articulo</a></li>
-            <li><a href="{{ route('areaConsulta.index') }}" class="nav-link2">Area</a></li>
-        </ul>
-    </nav>
+     @if (Auth::check())
+        <nav class="nav2">
+            <ul>
+                <li><a href="{{ route('resguardo') }}" class="nav-link2">Resguardo</a></li>
+                <li><a href="{{ route('traslado') }}" class="nav-link2">Traslado</a></li>
+                <li><a href="{{ route('division') }}" class="nav-link2">Division o departamento</a></li>
+                <li><a href="{{ route('articulo') }}" class="nav-link2">Articulo</a></li>
+                <li><a href="{{ route('areaConsulta.index') }}" class="nav-link2">Area</a></li>
+            </ul>
+        </nav>
+    @endif
     <br>
 </body>
 

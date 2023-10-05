@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(campusSeeder::class);
         $this->call(edificioSeeder::class);
         $this->call(equipoSeeder::class);
+        $this->call(tipoAdquisicion::class);
 
         User::create([
             'name' => 'Abraham Duran',

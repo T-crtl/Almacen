@@ -19,7 +19,7 @@
                                     <input type="text" name="search" placeholder="Buscar por Division">
                                     
                                     <select name="plantel">
-                                        <option value="">Seleccionar División</option>
+                                        <option value="">Seleccionar Plantel</option>
                                         <option value="1">Plantel Tonala</option>
                                         <option value="2">Plantel Colomos</option>
                                         <option value="3">Plantel Rio Santiago</option>

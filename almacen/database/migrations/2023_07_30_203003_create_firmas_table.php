@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('Funcion', 30);
             $table->integer('PlantelID')->unsigned(); // tabla plantel
             $table->string('NivelPuesto', 30);
+            $table->string('firmasId');
             $table->timestamps();
         });
     }
