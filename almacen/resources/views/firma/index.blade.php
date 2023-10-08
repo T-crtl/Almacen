@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Nombre del Personal</th>
+										<th>Nombre</th>
 										<th>Funcion</th>
 										<th>Plantel</th>
 										<th>Nivel de puesto</th>

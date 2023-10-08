@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Personale
+    Peopledatabase
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Personale') }}
+                                {{ __('Personal') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('personales.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('peopledatabases.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -39,37 +39,37 @@
 										<th>Nomina</th>
 										<th>Nombre</th>
 										<th>Adscripcion</th>
-										<th>Tipo Contrato</th>
-										<th>Plantelid</th>
+										<th>Tipo De Contrato</th>
 										<th>Funcion</th>
 										<th>Correo</th>
-										<th>Rutaimg</th>
+										<th>Foto</th>
 										<th>Estatus</th>
 										<th>Nivel Educativo</th>
+										<th>Plantel</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($personales as $personale)
+                                    @foreach ($peopledatabases as $peopledatabase)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $personale->nomina }}</td>
-											<td>{{ $personale->nombre }}</td>
-											<td>{{ $personale->adscripcion }}</td>
-											<td>{{ $personale->tipo_contrato }}</td>
-											<td>{{ $personale->plantelId }}</td>
-											<td>{{ $personale->funcion }}</td>
-											<td>{{ $personale->correo }}</td>
-											<td>{{ $personale->rutaImg }}</td>
-											<td>{{ $personale->estatus }}</td>
-											<td>{{ $personale->nivel_educativo }}</td>
+											<td>{{ $peopledatabase->nomina }}</td>
+											<td>{{ $peopledatabase->nombre }}</td>
+											<td>{{ $peopledatabase->adscripcion }}</td>
+											<td>{{ $peopledatabase->tipo_contrato }}</td>
+											<td>{{ $peopledatabase->funcion }}</td>
+											<td>{{ $peopledatabase->correo }}</td>
+											<td>{{ $peopledatabase->foto }}</td>
+											<td>{{ $peopledatabase->estatus }}</td>
+											<td>{{ $peopledatabase->nivel_educativo }}</td>
+											<td>{{ $peopledatabase->campus->descripcion }}</td>
 
                                             <td>
-                                                <form action="{{ route('personales.destroy',$personale->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('personales.show',$personale->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('personales.edit',$personale->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('peopledatabases.destroy',$peopledatabase->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('peopledatabases.show',$peopledatabase->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('peopledatabases.edit',$peopledatabase->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -82,7 +82,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $personales->links() !!}
+                {!! $peopledatabases->links() !!}
             </div>
         </div>
     </div>

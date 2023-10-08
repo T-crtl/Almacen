@@ -27,7 +27,8 @@ Route::resource('areas', App\Http\Controllers\AreaController::class)->middleware
 Route::resource('firmas', App\Http\Controllers\FirmaController::class)->middleware('auth');
 Route::resource('safeguards', App\Http\Controllers\SafeguardController::class)->middleware('auth');
 Route::resource('inventories', App\Http\Controllers\InventoryController::class)->middleware('auth');
-Route::resource('personale', App\Http\Controllers\PersonaleController::class)->middleware('auth');
+Route::resource('peopledatabases', App\Http\Controllers\PeopledatabaseController::class)->middleware('auth');
+//Route::resource('personales', App\Http\Controllers\PersonaleController::class)->middleware('auth');
 
 //consultas
 Route::get('/consultas/resguardo', [App\Http\Controllers\HomeController::class, 'resguardo'])->name('resguardo');

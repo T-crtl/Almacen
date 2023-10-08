@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call(campusSeeder::class);
         $this->call(edificioSeeder::class);
         $this->call(equipoSeeder::class);
+        $this->call(personaleSeeder::class);
         
 
         User::create([

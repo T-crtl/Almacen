@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $personale->name ?? "{{ __('Show') Personale" }}
+    {{ $peopledatabase->name ?? "{{ __('Show') Peopledatabase" }}
 @endsection
 
 @section('content')
@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Personale</span>
+                            <span class="card-title">{{ __('Show') }} Peopledatabase</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('personales.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary" href="{{ route('peopledatabases.index') }}"> {{ __('Back') }}</a>
                         </div>
                     </div>
 
@@ -22,43 +22,43 @@
                         
                         <div class="form-group">
                             <strong>Nomina:</strong>
-                            {{ $personale->nomina }}
+                            {{ $peopledatabase->nomina }}
                         </div>
                         <div class="form-group">
                             <strong>Nombre:</strong>
-                            {{ $personale->nombre }}
+                            {{ $peopledatabase->nombre }}
                         </div>
                         <div class="form-group">
                             <strong>Adscripcion:</strong>
-                            {{ $personale->adscripcion }}
+                            {{ $peopledatabase->adscripcion }}
                         </div>
                         <div class="form-group">
                             <strong>Tipo Contrato:</strong>
-                            {{ $personale->tipo_contrato }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Plantelid:</strong>
-                            {{ $personale->plantelId }}
+                            {{ $peopledatabase->tipo_contrato }}
                         </div>
                         <div class="form-group">
                             <strong>Funcion:</strong>
-                            {{ $personale->funcion }}
+                            {{ $peopledatabase->funcion }}
                         </div>
                         <div class="form-group">
                             <strong>Correo:</strong>
-                            {{ $personale->correo }}
+                            {{ $peopledatabase->correo }}
                         </div>
                         <div class="form-group">
                             <strong>Rutaimg:</strong>
-                            {{ $personale->rutaImg }}
+                            {{ $peopledatabase->foto }}
                         </div>
                         <div class="form-group">
                             <strong>Estatus:</strong>
-                            {{ $personale->estatus }}
+                            {{ $peopledatabase->estatus }}
                         </div>
                         <div class="form-group">
                             <strong>Nivel Educativo:</strong>
-                            {{ $personale->nivel_educativo }}
+                            {{ $peopledatabase->nivel_educativo }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Plantelid:</strong>
+                            {{ $peopledatabase->plantelID }}
                         </div>
 
                     </div>

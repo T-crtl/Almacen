@@ -48,31 +48,32 @@
 
                         @if (Auth::check())
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('equipos.index') }}">{{ __('equipos') }}</a>
+                                <a class="nav-link" href="{{ route('equipos.index') }}">{{ __('Equipos') }}</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('edificios.index') }}">{{ __('edificios') }}</a>
+                                <a class="nav-link" href="{{ route('edificios.index') }}">{{ __('Edificios') }}</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('campuses.index') }}">{{ __('campuses') }}</a>
+                                <a class="nav-link" href="{{ route('campuses.index') }}">{{ __('Campuses') }}</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('areas.index') }}">{{ __('areas') }}</a>
+                                <a class="nav-link" href="{{ route('areas.index') }}">{{ __('Areas') }}</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('firmas.index') }}">{{ __('firmas') }}</a>
+                                <a class="nav-link" href="{{ route('firmas.index') }}">{{ __('Firmas') }}</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('safeguards.index') }}">{{ __('resguardos') }}</a>
+                                <a class="nav-link" href="{{ route('safeguards.index') }}">{{ __('Resguardos') }}</a>
                             </li>
 
-
-
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('peopledatabases.index') }}">{{ __('Personal') }}</a>
+                            </li>
 
                     </ul>
                     @endif

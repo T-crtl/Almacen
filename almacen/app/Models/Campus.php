@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\App;
 
 /**
  * Class Campus
@@ -42,6 +43,7 @@ class Campus extends Model
     {
       return $this->hasMany('App\Models\Firma', 'PlantelID', 'id');
       return $this->hasMany('App\Models\Area', 'plantelID', 'id');
+      return $this->hasMany('App\Models\PeopleDataBase', 'plantelID', 'id');
     }
 
 }
