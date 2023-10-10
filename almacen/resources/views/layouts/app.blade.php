@@ -75,6 +75,8 @@
                                 <a class="nav-link" href="{{ route('peopledatabases.index') }}">{{ __('Personal') }}</a>
                             </li>
 
+                            
+
                     </ul>
                     @endif
 
