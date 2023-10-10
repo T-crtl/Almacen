@@ -28,6 +28,7 @@ Route::resource('firmas', App\Http\Controllers\FirmaController::class)->middlewa
 Route::resource('safeguards', App\Http\Controllers\SafeguardController::class)->middleware('auth');
 Route::resource('inventories', App\Http\Controllers\InventoryController::class)->middleware('auth');
 Route::resource('peopledatabases', App\Http\Controllers\PeopledatabaseController::class)->middleware('auth');
+Route::resource('consultas', App\Http\Controllers\ConsultaController::class)->middleware('auth');
 //Route::resource('personales', App\Http\Controllers\PersonaleController::class)->middleware('auth');
 
 //consultas

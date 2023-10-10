@@ -54,5 +54,5 @@ class Peopledatabase extends Model
     {
       return $this->hasOne('App\Models\Campus', 'id', 'plantelID');
     }
-
+    
 }

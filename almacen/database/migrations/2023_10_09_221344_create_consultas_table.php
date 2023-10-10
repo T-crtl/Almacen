@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('consultas', function (Blueprint $table) {
             $table->id();
-            $table->integer('registro')->unique();
+            //$table->integer('registro')->unique();
             $table->integer('resguardatario');
             $table->date('fecha');
             $table->integer('area');
