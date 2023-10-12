@@ -77,7 +77,11 @@
 
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('consultas.index') }}">{{ __('Consultas') }}</a>
-                            </li>                            
+                            </li>       
+                            
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('trasladoArticulo.index') }}">{{ __('Traslados') }}</a>
+                            </li>   
 
                     </ul>
                     @endif

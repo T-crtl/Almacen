@@ -33,6 +33,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'a@gmail.com',
             'password' => 'admin123',
         ]);
+        User::create([
+            'name' => 'David Gutierrez',
+            'email' => 'b@gmail.com',
+            'password' => '123456789',
+        ]);
 
     }
 }

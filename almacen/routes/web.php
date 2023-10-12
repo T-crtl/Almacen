@@ -29,10 +29,14 @@ Route::resource('safeguards', App\Http\Controllers\SafeguardController::class)->
 Route::resource('inventories', App\Http\Controllers\InventoryController::class)->middleware('auth');
 Route::resource('peopledatabases', App\Http\Controllers\PeopledatabaseController::class)->middleware('auth');
 Route::resource('consultas', App\Http\Controllers\ConsultaController::class)->middleware('auth');
+Route::resource('consultas', App\Http\Controllers\ConsultaController::class)->middleware('auth');
 //Route::resource('personales', App\Http\Controllers\PersonaleController::class)->middleware('auth');
+//traslado - articulo
+Route::resource('trasladoArticulo', App\Http\Controllers\TrasladoArticuloController::class)->middleware('auth');
 
 //consultas
 Route::get('/consultas/resguardo', [App\Http\Controllers\HomeController::class, 'resguardo'])->name('resguardo');
+
 //Route::get('consultas/areaConsultas', [App\Http\Controllers\ConsultaController::class, 'areaConsultas'])->name('areaConsultas');
 Route::resource('areaConsulta', App\Http\Controllers\AreaConsultaController::class)->middleware('auth');
 Route::get('/consultas/articulo', [App\Http\Controllers\HomeController::class, 'articulo'])->name('articulo');

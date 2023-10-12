@@ -51,7 +51,7 @@
                                             
 											<td>{{ $firma->NombrePersonal }}</td>
 											<td>{{ $firma->Funcion }}</td>
-											<td>{{ $firma->campuses->descripcion }}</td>
+											<td>{{ $firma->campus->descripcion }}</td>
 											<td>{{ $firma->NivelPuesto }}</td>
 
                                             <td>
