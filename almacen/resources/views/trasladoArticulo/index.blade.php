@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Firma
+    Trasldo-Articulo
 @endsection
 
 @section('content')
@@ -13,14 +13,10 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Firma') }}
+                                {{ __('Traslado Articulo') }}
                             </span>
 
-                             <div class="float-right">
-                                <a href="{{ route('firmas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
-                                </a>
-                              </div>
+                             
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
@@ -36,31 +32,39 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Nombre</th>
-										<th>Funcion</th>
+										<th>Numero inventario</th>
+										<th>Nomina anterior</th>
+										<th>Nomina nuevo</th>
 										<th>Plantel</th>
-										<th>Nivel de puesto</th>
+										<th>Firma</th>
+										<th>Observaciones</th>
+										<th>Fecha de traslado</th>
+										<th>Documento</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($firmas as $firma)
+                                    @foreach ($traslados as $traslado)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $firma->NombrePersonal }}</td>
-											<td>{{ $firma->Funcion }}</td>
-											<td>{{ $firma->campus->descripcion }}</td>
-											<td>{{ $firma->NivelPuesto }}</td>
+											<td>{{ $traslado->numInv }}</td>
+											<td>{{ $traslado->nominaAnterior }}</td>
+											<td>{{ $traslado->nominaNuevo }}</td>
+											<td>{{ $traslado->campus->descripcion }}</td>
+											<td>{{ $traslado->firma }}</td>
+											<td>{{ $traslado->observaciones }}</td>
+											<td>{{ $traslado->fechaTraslado }}</td>
+											<td>{{ $traslado->documento }}</td>
 
                                             <td>
-                                                <form action="{{ route('firmas.destroy',$firma->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('firmas.show',$firma->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('firmas.edit',$firma->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('trasladoArticulo.destroy',$traslado->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('trasladoArticulo.show',$traslado->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    
                                                     @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                                    
+                                                    
                                                 </form>
                                             </td>
                                         </tr>
@@ -70,7 +74,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $firmas->links() !!}
+                {!! $traslados->links() !!}
             </div>
         </div>
     </div>

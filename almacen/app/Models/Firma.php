@@ -40,7 +40,7 @@ class Firma extends Model
     /**
     *@return \Illuminate\Database\Eloquent\Relations\HasOne
     */
-    public function campuses()
+    public function campus()
     {
       return $this->hasOne('App\Models\Campus', 'id', 'PlantelID');
     }
