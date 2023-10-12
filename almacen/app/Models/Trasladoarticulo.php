@@ -26,14 +26,15 @@ class Trasladoarticulo extends Model
 	}*/
 	public function equipo()
 	{
-		return $this->hasOne('App\Models\Equipo', 'id', 'funcion');
-		return $this->hasOne('App\Models\Equipo', 'id', 'precio'); // Valor historico
+		return $this->hasOne('App\Models\Equipo', 'numInv', 'numInv');
 	}
-	public function personal()
+	public function personalA()
 	{
-		return $this->hasOne('App\Models\Peopledatabase', 'id', 'descripcion');
-		return $this->hasOne('App\Models\Peopledatabase', 'id', 'funcion');
-		return $this->hasOne('App\Models\Peopledatabase', 'id', 'adscripcion');
+		return $this->hasOne('App\Models\Peopledatabase', 'nomina', 'nominaAnterior');
+	}
+	public function personalN()
+	{
+		return $this->hasOne('App\Models\Peopledatabase', 'nomina', 'nominaNuevo');
 	}
     public function campus()
 	{

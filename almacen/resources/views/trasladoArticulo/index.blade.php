@@ -33,8 +33,14 @@
                                         <th>No</th>
                                         
 										<th>Numero inventario</th>
-										<th>Nomina anterior</th>
+                                        <th>Descripción</th>
+                                        <th>Valor historico</th>
+										<th>Nomina Resguardatario anterior</th>
+                                        <th>Función Resguardatario anterior</th>
+                                        <th>Adscripción Resguardatario anterior</th>
 										<th>Nomina nuevo</th>
+                                        <th>Función Resguardatario nuevo</th>
+                                        <th>Adscripción Resguardatario nuevo</th>
 										<th>Plantel</th>
 										<th>Firma</th>
 										<th>Observaciones</th>
@@ -50,8 +56,14 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $traslado->numInv }}</td>
+                                            <td>{{ $traslado->equipo->descripcion }}</td>
+                                            <td>{{ $traslado->equipo->precio }}</td>
 											<td>{{ $traslado->nominaAnterior }}</td>
+                                            <td>{{ $traslado->personalA->funcion }}</td>
+                                            <td>{{ $traslado->personalA->adscripcion }}</td>
 											<td>{{ $traslado->nominaNuevo }}</td>
+                                            <td>{{ $traslado->personalN->funcion }}</td>
+                                            <td>{{ $traslado->personalN->adscripcion }}</td>
 											<td>{{ $traslado->campus->descripcion }}</td>
 											<td>{{ $traslado->firma }}</td>
 											<td>{{ $traslado->observaciones }}</td>
