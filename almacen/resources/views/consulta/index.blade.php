@@ -72,7 +72,7 @@
 											<td>{{ $consulta->equipo->serie }}</td>
 											<td>{{ $consulta->equipo->fechaEntrada }}</td>
 											<td>{{ $consulta->total }}</td>
-											<td>{{ $consulta->monto }}</td>
+											<td>{{ $consulta->equipo->precio }}</td>
 											<td>{{ $consulta->firmas->NombrePersonal }}</td>
 											<td>{{ $consulta->firmas->NombrePersonal }}</td>
 

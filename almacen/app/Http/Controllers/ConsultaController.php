@@ -38,7 +38,7 @@ class ConsultaController extends Controller
         $nombre = Peopledatabase::pluck('nombre', 'id');
         $equipo = Equipo::pluck('numInv', 'id');
         $firmas = Firma::pluck('NombrePersonal', 'id');
-        $firmas2 = Firma::pluck('NombrePersonal', 'id');
+        //$firmas2 = Firma::pluck('NombrePersonal', 'id');
         return view('consulta.create', compact('consulta', 'nombre', 'equipo', 'firmas'));
     }
 

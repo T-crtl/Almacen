@@ -23,18 +23,11 @@ class consultaSeeder extends Seeder
             'observaciones' => 'lorem lorem lorem',
             'documento' => 'documento.pdf', 
             'numInv' => 1,
-            'articulo' => 1,
-            'descripcion' => 1,
-            'marca' => 1,
-            'modelo' => 1,
-            'serie' => 1,
-            'fechaEntrada' => 1,
-            'total' => 1,
-            'monto' => 1,
+            
             'firma' => 1,
             'inventarios' => 1,
         ]);
-        Consulta::create([
+       /* Consulta::create([
             'resguardatario' => 1,
             'fecha' => $fechaEspecifica,
             'area' => 2,
@@ -87,6 +80,6 @@ class consultaSeeder extends Seeder
             'monto' => 1,
             'firma' => 1,
             'inventarios' => 1,
-        ]);
+        ]);*/
     }
 }

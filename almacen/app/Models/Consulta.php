@@ -75,7 +75,7 @@ class Consulta extends Model
 		return $this->hasOne('App\Models\Equipo', 'id', 'marca');
 		return $this->hasOne('App\Models\Equipo', 'id', 'serie');
 		return $this->hasOne('App\Models\Equipo', 'id', 'fechaEntrada');
-		return $this->hasOne('App\Models\Equipo', 'id', 'fechaEntrada');
+		return $this->hasOne('App\Models\Equipo', 'id', 'monto');
 	}
 	public function firmas()
 	{
