@@ -46,41 +46,13 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
 
-                        @if (Auth::check())
+                        @if (Auth::check())                            
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('equipos.index') }}">{{ __('Equipos') }}</a>
-                            </li>
+                                <a class="nav-link" href="{{ route('reportesConsultas.index') }}">{{ __('Reportes y Consultas') }}</a>
+                            </li>   
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('edificios.index') }}">{{ __('Edificios') }}</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('campuses.index') }}">{{ __('Campuses') }}</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('areas.index') }}">{{ __('Areas') }}</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('firmas.index') }}">{{ __('Firmas') }}</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('safeguards.index') }}">{{ __('Resguardos') }}</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('peopledatabases.index') }}">{{ __('Personal') }}</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('consultas.index') }}">{{ __('Consultas') }}</a>
-                            </li>       
-                            
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('trasladoArticulo.index') }}">{{ __('Traslados') }}</a>
+                                <a class="nav-link" href="{{ route('dataBase.index') }}">{{ __('Base de datos') }}</a>
                             </li>   
 
                     </ul>
@@ -190,7 +162,7 @@
             color: white;
         }
     </style>
-     @if (Auth::check())
+   <!--  @if (Auth::check())
         <nav class="nav2">
             <ul>
                 <li><a href="{{ route('resguardo') }}" class="nav-link2">Resguardo</a></li>
@@ -200,7 +172,7 @@
                 <li><a href="{{ route('areaConsulta.index') }}" class="nav-link2">Area</a></li>
             </ul>
         </nav>
-    @endif
+    @endif-->
     <br>
 </body>
 

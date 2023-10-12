@@ -42,6 +42,8 @@ Route::resource('areaConsulta', App\Http\Controllers\AreaConsultaController::cla
 Route::get('/consultas/articulo', [App\Http\Controllers\HomeController::class, 'articulo'])->name('articulo');
 Route::get('/consultas/division', [App\Http\Controllers\HomeController::class, 'division'])->name('division');
 Route::get('/consultas/traslado', [App\Http\Controllers\HomeController::class, 'traslado'])->name('traslado')->middleware('auth');
-
+Route::get('/dataBase', [App\Http\Controllers\DataBaseController::class, 'dataBase'])->name('dataBase.index')->middleware('auth');
+//Route::get('/dataBase', [App\Http\Controllers\DataBaseController::class, 'dataBase'])->name('DataBase')->middleware('auth');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/reportesConsultas', [App\Http\Controllers\ReportesConsultasController::class, 'reporte'])->name('reportesConsultas.index')->middleware('auth');
 
