@@ -35,7 +35,7 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
+                                        <th>Registro</th>
 										<th>Nomina</th>
 										<th>Nombre</th>
 										<th>Adscripcion</th>
@@ -55,6 +55,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
+                                            <td>{{ $peopledatabase->registro}}</td>
 											<td>{{ $peopledatabase->nomina }}</td>
 											<td>{{ $peopledatabase->nombre }}</td>
 											<td>{{ $peopledatabase->adscripcion }}</td>

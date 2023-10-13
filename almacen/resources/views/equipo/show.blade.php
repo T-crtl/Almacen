@@ -21,7 +21,7 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Numinv:</strong>
+                            <strong>Numero de Inventario:</strong>
                             {{ $equipo->numInv }}
                         </div>
                         <div class="form-group">
@@ -45,7 +45,7 @@
                             {{ $equipo->precio }}
                         </div>
                         <div class="form-group">
-                            <strong>Fechaentrada:</strong>
+                            <strong>Fecha de entrada:</strong>
                             {{ $equipo->fechaEntrada }}
                         </div>
                         <div class="form-group">
@@ -57,16 +57,16 @@
                             {{ $equipo->articulo }}
                         </div>
                         <div class="form-group">
-                            <strong>Rutaimg:</strong>
+                            <strong>Imagen:</strong>
                             {{ $equipo->rutaImg }}
                         </div>
                         <div class="form-group">
-                            <strong>Tipoadq:</strong>
+                            <strong>Tipo de adquisicion:</strong>
                             {{ $equipo->tipoAdq }}
                         </div>
                         <div class="form-group">
-                            <strong>Areaid:</strong>
-                            {{ $equipo->areaId }}
+                            <strong>Area:</strong>
+                            {{ $equipo->areas->descripcion }}
                         </div>
 
                     </div>

@@ -1,14 +1,14 @@
 <div class="box box-info padding-1">
     <div class="box-body">
         
-        <div class="form-group">
+       
             {{ Form::label('registro') }}
             {{ Form::text('registro', $consulta->registro, ['class' => 'form-control' . ($errors->has('registro') ? ' is-invalid' : ''), 'placeholder' => 'Registro']) }}
             {!! $errors->first('registro', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
+        
         <div class="form-group">
             {{ Form::label('resguardatario') }}
-            {{ Form::text('resguardatario', $nombre, $consulta->resguardatario, ['class' => 'form-control' . ($errors->has('resguardatario') ? ' is-invalid' : ''), 'placeholder' => 'Resguardatario']) }}
+            {{ Form::select('resguardatario', $nombre, $consulta->resguardatario, ['class' => 'form-control' . ($errors->has('resguardatario') ? ' is-invalid' : ''), 'placeholder' => 'Resguardatario']) }}
             {!! $errors->first('resguardatario', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('area') }}
-            {{ Form::text('area', $consulta->area, ['class' => 'form-control' . ($errors->has('area') ? ' is-invalid' : ''), 'placeholder' => 'Area']) }}
+            {{ Form::select('area', $areas, $consulta->area, ['class' => 'form-control' . ($errors->has('area') ? ' is-invalid' : ''), 'placeholder' => 'Area']) }}
             {!! $errors->first('area', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

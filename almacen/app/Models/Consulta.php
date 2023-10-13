@@ -82,5 +82,9 @@ class Consulta extends Model
 		return $this->hasOne('App\Models\Firma', 'id', 'firma');
 		return $this->hasOne('App\Models\Firma', 'id', 'inventarios');
 	}
+	public function ubicacion()
+	{
+		return $this->hasOne('App\Models\Area', 'id', 'area');
+	}
 
 }

@@ -19,6 +19,11 @@
                     </div>
 
                     <div class="card-body">
+
+                        <div class="form-group">
+                            <strong>Nomina:</strong>
+                            {{ $peopledatabase->registro }}
+                        </div>
                         
                         <div class="form-group">
                             <strong>Nomina:</strong>
@@ -57,8 +62,8 @@
                             {{ $peopledatabase->nivel_educativo }}
                         </div>
                         <div class="form-group">
-                            <strong>Plantelid:</strong>
-                            {{ $peopledatabase->plantelID }}
+                            <strong>Plantel:</strong>
+                            {{ $peopledatabase->campus->descripcion }}
                         </div>
 
                     </div>

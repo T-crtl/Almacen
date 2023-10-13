@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
         $this->call(equipoSeeder::class);
         $this->call(personaleSeeder::class);
         $this->call(firmaSeeder::class);
-        //$this->call(consultaSeeder::class);
+        $this->call(consultaSeeder::class);
 
         User::create([
             'name' => 'Abraham Duran',
@@ -38,6 +38,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'b@gmail.com',
             'password' => '123456789',
         ]);
-
+        $this->call(consultaSeeder::class);
     }
 }

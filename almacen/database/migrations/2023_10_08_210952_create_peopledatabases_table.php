@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('peopledatabases', function (Blueprint $table) {
                 $table->id();
+                $table->bigInteger('registro');
                 $table->integer('nomina');
                 $table->string('nombre', 100);
                 $table->string('adscripcion');

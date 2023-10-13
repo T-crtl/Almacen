@@ -58,10 +58,10 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $consulta->registro }}</td>
+											<td>{{ $consulta->cons->registro }}</td>
 											<td>{{ $consulta->cons->nombre }}</td>
 											<td>{{ $consulta->fecha }}</td>
-											<td>{{ $consulta->area }}</td>
+											<td>{{ $consulta->ubicacion->descripcion }}</td>
 											<td>{{ $consulta->observaciones }}</td>
 											<td>{{ $consulta->documento }}</td>
 											<td>{{ $consulta->equipo->numInv }}</td>
@@ -74,7 +74,7 @@
 											<td>{{ $consulta->total }}</td>
 											<td>{{ $consulta->equipo->precio }}</td>
 											<td>{{ $consulta->firmas->NombrePersonal }}</td>
-											<td>{{ $consulta->firmas->NombrePersonal }}</td>
+											<td>{{ $consulta->cons->nombre }}</td>
 
                                             <td>
                                                 <form action="{{ route('consultas.destroy',$consulta->id) }}" method="POST">

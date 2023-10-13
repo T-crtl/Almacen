@@ -22,7 +22,7 @@
                         
                         <div class="form-group">
                             <strong>Registro:</strong>
-                            {{ $consulta->registro }}
+                            {{ $consulta->cons->registro }}
                         </div>
                         <div class="form-group">
                             <strong>Resguardatario:</strong>

@@ -11,17 +11,17 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Firma</span>
+                            <span class="card-title">Base de datos Firma</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('firmas.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary" href="{{ route('firmas.index') }}"> {{ __('Atras') }}</a>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Nombrepersonal:</strong>
+                            <strong>Nombre del personal:</strong>
                             {{ $firma->NombrePersonal }}
                         </div>
                         <div class="form-group">
@@ -29,11 +29,11 @@
                             {{ $firma->Funcion }}
                         </div>
                         <div class="form-group">
-                            <strong>Plantelid:</strong>
-                            {{ $firma->PlantelID }}
+                            <strong>Plantel:</strong>
+                            {{ $firma->campus->descripcion }}
                         </div>
                         <div class="form-group">
-                            <strong>Nivelpuesto:</strong>
+                            <strong>Nivel de puesto:</strong>
                             {{ $firma->NivelPuesto }}
                         </div>
 

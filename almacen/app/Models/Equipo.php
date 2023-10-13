@@ -55,5 +55,5 @@ class Equipo extends Model
     {
       return $this->hasOne('App\Models\Area', 'id', 'areaId');
     }
-
+    
 }

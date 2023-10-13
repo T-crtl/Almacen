@@ -33,8 +33,8 @@
                             {{ $edificio->nivelId }}
                         </div>
                         <div class="form-group">
-                            <strong>Areaid:</strong>
-                            {{ $edificio->areaId }}
+                            <strong>Area:</strong>
+                            {{ $edificio->areas->descripcion }}
                         </div>
 
                     </div>

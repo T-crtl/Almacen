@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ __('Create') }} Firma
+    {{ __('Create') }} Consulta
 @endsection
 
 @section('content')
@@ -13,13 +13,13 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Añadir Firma Nueva</span>
+                        <span class="card-title">{{ __('Create') }} Consulta</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('firmas.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('consultas.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
-                            @include('firma.form')
+                            @include('consulta.form')
 
                         </form>
                     </div>

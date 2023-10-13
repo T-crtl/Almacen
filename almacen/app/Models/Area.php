@@ -58,6 +58,7 @@ class Area extends Model
     public function campuses()
     {
       return $this->hasOne('App\Models\Campus', 'id', 'plantelID');
+      return $this->hasOne('App\Models\Consulta', 'id', 'plantelID');
     }
 
     public function edificios()

@@ -1,5 +1,11 @@
 <div class="box box-info padding-1">
     <div class="box-body">
+
+        <div class="form-group">
+            {{ Form::label('registro') }}
+            {{ Form::text('registro', $peopledatabase->registro, ['class' => 'form-control' . ($errors->has('registro') ? ' is-invalid' : ''), 'placeholder' => 'Rregistro']) }}
+            {!! $errors->first('registro ', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
         
         <div class="form-group">
             {{ Form::label('nomina') }}

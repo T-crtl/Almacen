@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Peopledatabase;
 use App\Models\Equipo;
 use App\Models\Firma;
+use App\Models\Area;
 
 /**
  * Class ConsultaController
@@ -38,8 +39,9 @@ class ConsultaController extends Controller
         $nombre = Peopledatabase::pluck('nombre', 'id');
         $equipo = Equipo::pluck('numInv', 'id');
         $firmas = Firma::pluck('NombrePersonal', 'id');
+        $areas = Area::pluck('descripcion', 'id');
         //$firmas2 = Firma::pluck('NombrePersonal', 'id');
-        return view('consulta.create', compact('consulta', 'nombre', 'equipo', 'firmas'));
+        return view('consulta.create', compact('consulta', 'nombre', 'equipo', 'firmas', 'areas'));
     }
 
     /**
