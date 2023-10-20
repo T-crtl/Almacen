@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Equipo;
 use App\Models\Area;
 use Illuminate\Http\Request;
+use PhpParser\Node\Expr;
+use Maatwebsite\Excel\Facades\Excel;
+
+use App\Exports\EquipoExport;
 
 /**
  * Class EquipoController
@@ -107,5 +111,10 @@ class EquipoController extends Controller
 
         return redirect()->route('equipos.index')
             ->with('success', 'Equipo deleted successfully');
+    }
+
+    public function exportExcel()
+    {
+        return Excel::download(new EquipoExport, 'equipo-list.xlsx');
     }
 }

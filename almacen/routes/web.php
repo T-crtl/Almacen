@@ -47,3 +47,5 @@ Route::get('/dataBase', [App\Http\Controllers\DataBaseController::class, 'dataBa
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/reportesConsultas', [App\Http\Controllers\ReportesConsultasController::class, 'reporte'])->name('reportesConsultas.index')->middleware('auth');
 
+//Descarga de excel
+Route::get('equipo-list-excel', 'equipoController@exportExcel')->name('equipo.excel');

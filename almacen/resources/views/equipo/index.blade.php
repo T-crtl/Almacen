@@ -17,6 +17,10 @@
                             </span>
 
                              <div class="float-right">
+                                <!--- ====================      BOTON DE DESCARGAR EXCEL     ==================== -->
+                                <a href="{{ route('equipos.excel') }}" class="btn btn-success btn-sm float-right"  data-placement="left">
+                                    {{ __('Descargar excel') }}
+                                  </a>
                                 <a href="{{ route('equipos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
