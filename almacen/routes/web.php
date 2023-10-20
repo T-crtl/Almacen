@@ -48,4 +48,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/reportesConsultas', [App\Http\Controllers\ReportesConsultasController::class, 'reporte'])->name('reportesConsultas.index')->middleware('auth');
 
 //Descarga de excel
-Route::get('equipo-list-excel', 'equipoController@exportExcel')->name('equipo.excel');
+Route::get('equipo-list-excel', 'App\Http\Controllers\EquipoController@exportExcel')->name('equipos.excel');
+//Carga de excel
+Route::post('import-list-excel', 'App\Http\Controllers\EquipoController@importExcel')->name('equipos.import.excel');

@@ -9,6 +9,7 @@ use PhpParser\Node\Expr;
 use Maatwebsite\Excel\Facades\Excel;
 
 use App\Exports\EquipoExport;
+use App\Imports\EquipoImport;
 
 /**
  * Class EquipoController
@@ -116,5 +117,13 @@ class EquipoController extends Controller
     public function exportExcel()
     {
         return Excel::download(new EquipoExport, 'equipo-list.xlsx');
+    }
+
+    public function importExcel(Request $request)
+    {
+        $file = $request->file('file');
+        Excel::import(new EquipoImport, $file);
+
+        return redirect()->route('equipos.index');
     }
 }

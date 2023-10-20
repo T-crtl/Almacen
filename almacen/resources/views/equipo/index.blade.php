@@ -17,6 +17,12 @@
                             </span>
 
                              <div class="float-right">
+                                <!--- ====================      BOTON DE IMPORTAR EXCEL / FORM    ==================== -->
+                                <form action=" {{ route('equipos.import.excel')}}" method="post" enctype="multipart/form-data">
+                                    @csrf
+                                    <input type="file" name="file">
+                                    <button class="btn btn-success btn-sm float-right"> Importar usuarios</button>
+                                    </form>
                                 <!--- ====================      BOTON DE DESCARGAR EXCEL     ==================== -->
                                 <a href="{{ route('equipos.excel') }}" class="btn btn-success btn-sm float-right"  data-placement="left">
                                     {{ __('Descargar excel') }}
@@ -24,6 +30,7 @@
                                 <a href="{{ route('equipos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
+
                               </div>
                         </div>
                     </div>
