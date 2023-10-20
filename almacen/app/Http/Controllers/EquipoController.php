@@ -124,6 +124,7 @@ class EquipoController extends Controller
         $file = $request->file('file');
         Excel::import(new EquipoImport, $file);
 
-        return redirect()->route('equipos.index');
+        return redirect()->route('equipos.index')
+            ->with('success', 'Excel cargado correctamente.');
     }
 }
