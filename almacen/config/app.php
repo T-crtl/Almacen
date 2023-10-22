@@ -168,6 +168,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        //configuracion para api excel 
         Maatwebsite\Excel\ExcelServiceProvider::class,
     ])->toArray(),
 

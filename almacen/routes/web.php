@@ -49,5 +49,7 @@ Route::get('/reportesConsultas', [App\Http\Controllers\ReportesConsultasControll
 
 //Descarga de excel
 Route::get('equipo-list-excel', 'App\Http\Controllers\EquipoController@exportExcel')->name('equipos.excel');
+Route::get('area-list-excel', 'App\Http\Controllers\AreaController@exportExcel')->name('areas.excel');
 //Carga de excel
 Route::post('import-list-excel', 'App\Http\Controllers\EquipoController@importExcel')->name('equipos.import.excel');
+Route::post('AreaImport-list-excel', 'App\Http\Controllers\AreaController@importExcel')->name('areas.import.excel');

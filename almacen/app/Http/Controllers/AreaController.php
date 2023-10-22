@@ -6,6 +6,11 @@ use App\Models\Area;
 use App\Models\Campus;
 use App\Models\Edificio;
 use Illuminate\Http\Request;
+use PhpParser\Node\Expr;
+use Maatwebsite\Excel\Facades\Excel;
+
+use App\Exports\AreaExport;
+use App\Imports\AreaImport;
 
 /**
  * Class AreaController
@@ -34,7 +39,7 @@ class AreaController extends Controller
     public function create()
     {
         $area = new Area();
-        $campuses = Campus::pluck('descripcion','id');
+        $campuses = Campus::pluck('descripcion', 'id');
         $edificios = Edificio::pluck('descripcion', 'id');
 
         return view('area.create', compact('area', 'campuses', 'edificios'));
@@ -78,7 +83,7 @@ class AreaController extends Controller
     public function edit($id)
     {
         $area = Area::find($id);
-        $campuses = Campus::pluck('descripcion','id');
+        $campuses = Campus::pluck('descripcion', 'id');
         $edificios = Edificio::pluck('descripcion', 'id');
 
 
@@ -113,5 +118,23 @@ class AreaController extends Controller
 
         return redirect()->route('areas.index')
             ->with('success', 'Area deleted successfully');
+    }
+    //Configurar exportar e importar  
+    public function exportExcel()
+    {
+        return Excel::download(new AreaExport, 'areas-list.xlsx');
+    }
+
+    public function importExcel(Request $request)
+    {
+        if (!$request == null) {
+            return redirect()->route('areas.index');
+        } else {
+            $file = $request->file('file');
+            Excel::import(new AreaImport, $file);
+
+            return redirect()->route('areas.index')
+                ->with('success', 'Excel cargado correctamente.');
+        }
     }
 }

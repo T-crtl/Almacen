@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Area</span>
+                            <span class="card-title">{{ __('Informacion') }} Area</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('areas.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary" href="{{ route('areas.index') }}"> {{ __('Regresar') }}</a>
                         </div>
                     </div>
 
@@ -37,12 +37,12 @@
                             {{ $area->division }}
                         </div>
                         <div class="form-group">
-                            <strong>Plantelid:</strong>
-                            {{ $area->plantelID }}
+                            <strong>Plantel:</strong>
+                            {{ $area->campuses->descripcion }}
                         </div>
                         <div class="form-group">
-                            <strong>Edificioid:</strong>
-                            {{ $area->edificioID }}
+                            <strong>Edificio:</strong>
+                            {{ $area->edificios->descripcion }}
                         </div>
                         <div class="form-group">
                             <strong>Nivel:</strong>
