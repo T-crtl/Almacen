@@ -8,6 +8,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+
+
     <title>Sistema de Inventarios</title>
 
     <!-- Fonts -->
@@ -26,6 +28,25 @@
     </script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <style>
+        footer {
+
+            color: #000000;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .Logo-CETI {
+            width: 150px;
+            /* Cambia este valor según tus necesidades */
+            height: auto;
+            /* Para mantener la proporción original de la imagen */
+        }
+    </style>
+
 
 </head>
 
@@ -33,6 +54,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/CETI_Logo.png/776px-CETI_Logo.png"
+                    alt="Logo CETI" class="Logo-CETI">
                 <a class="navbar-brand" href="{{ url('home') }}">Sistema de Inventarios</a>
                 <!-- {{ config('app.name', 'Sistema de Inventarios') }} -->
 
@@ -46,14 +69,15 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
 
-                        @if (Auth::check())                            
+                        @if (Auth::check())
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('reportesConsultas.index') }}">{{ __('Reportes y Consultas') }}</a>
-                            </li>   
+                                <a class="nav-link"
+                                    href="{{ route('reportesConsultas.index') }}">{{ __('Reportes y Consultas') }}</a>
+                            </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('dataBase.index') }}">{{ __('Base de datos') }}</a>
-                            </li>   
+                            </li>
 
                     </ul>
                     @endif
@@ -162,8 +186,8 @@
             color: white;
         }
     </style>
-   <!--  @if (Auth::check())
-        <nav class="nav2">
+    <!--  @if (Auth::check())
+<nav class="nav2">
             <ul>
                 <li><a href="{{ route('resguardo') }}" class="nav-link2">Resguardo</a></li>
                 <li><a href="{{ route('traslado') }}" class="nav-link2">Traslado</a></li>
@@ -172,7 +196,7 @@
                 <li><a href="{{ route('areaConsulta.index') }}" class="nav-link2">Area</a></li>
             </ul>
         </nav>
-    @endif-->
+@endif-->
     <br>
 </body>
 

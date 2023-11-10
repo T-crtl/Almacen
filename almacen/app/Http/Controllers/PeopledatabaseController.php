@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Peopledatabase;
 use Illuminate\Http\Request;
 use App\Models\Campus;
+use App\Http\resources\views\LoginCeti;
 
 /**
  * Class PeopledatabaseController

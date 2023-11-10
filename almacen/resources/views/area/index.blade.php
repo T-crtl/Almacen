@@ -17,25 +17,24 @@
                             </span>
 
                             <div class="float-right">
-                                <div class="float-right">
-                                    <!--- ====================      BOTON DE IMPORTAR EXCEL / FORM    ==================== -->
-                                    <form action=" {{ route('areas.import.excel') }}" method="post"
-                                        enctype="multipart/form-data">
-                                        @csrf
-                                        <input type="file" name="file">
-                                        <button class="btn btn-success btn-sm float-right"> Importar usuarios</button>
-                                    </form>
-                                    <!--- ====================      BOTON DE DESCARGAR EXCEL     ==================== -->
-                                    <a href="{{ route('areas.excel') }}" class="btn btn-success btn-sm float-right"
-                                        data-placement="left">
-                                        {{ __('Descargar excel') }}
-                                    </a>
-                                </div>
-                                <a href="{{ route('areas.create') }}" class="btn btn-primary btn-sm float-right"
-                                    data-placement="left">
-                                    {{ __('Create New') }}
-                                </a>
+                                <!-- Botón de Importar Excel / Form -->
+                                <form action="{{ route('areas.import.excel') }}" method="post" enctype="multipart/form-data">
+                                    @csrf
+                                    <div class="input-group">
+                                        <input type="file" name="file" class="form-control-file">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-success" type="submit">Importar usuarios</button>
+                                        </div>
+                                    </div>
+                                </form>
+                                
+                                <!-- Botón de Descargar Excel -->
+                                <a href="{{ route('areas.excel') }}" class="btn btn-success">Descargar Excel</a>
+                                
+                                <!-- Botón para Crear Nuevo -->
+                                <a href="{{ route('areas.create') }}" class="btn btn-primary">Crear Nueva Area</a>
                             </div>
+                            
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
