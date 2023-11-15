@@ -35,7 +35,7 @@ Route::resource('trasladoArticulo', App\Http\Controllers\TrasladoArticuloControl
 //consultas
 Route::get('/consultas/resguardo', [App\Http\Controllers\HomeController::class, 'resguardo'])->name('resguardo');
 
-Route::get('/loginxsiic', [App\Http\Controllers\Login::class, 'login'])->name('loginxsiic');
+Route::get('/loginxsiic', [App\Http\Controllers\LoginCetiController::class, 'login'])->name('loginxsiic');
 
 //Route::get('consultas/areaConsultas', [App\Http\Controllers\ConsultaController::class, 'areaConsultas'])->name('areaConsultas');
 Route::resource('areaConsulta', App\Http\Controllers\AreaConsultaController::class)->middleware('auth');

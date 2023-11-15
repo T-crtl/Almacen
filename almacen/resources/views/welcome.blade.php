@@ -6,12 +6,11 @@
         <div class="row justify-content-center">
             <title>Almacen</title>
             <div class="col-md-8">
-
-
-
-
-
-
+                <div class="mt-5">
+                    <h2>Bienvenido al Sistema de Inventarios</h2>
+                    <p>Administre fácilmente los inventarios de la institución con nuestra aplicación web. </p>
+                    <p>Explore las funciones disponibles y optimice la gestión de activos.</p>
+                </div>
             </div>
         </div>
     </div>
