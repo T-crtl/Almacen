@@ -40,10 +40,23 @@
         }
 
         .Logo-CETI {
-            width: 150px;
+            width: 100px;
             /* Cambia este valor según tus necesidades */
             height: auto;
             /* Para mantener la proporción original de la imagen */
+        }
+
+        .custom-navbar {
+            background-color: #035374;
+            color: white;
+            padding: 20px;
+            /* Ajusta el espacio interno según tus necesidades */
+            height: 80px;
+            /* Ajusta la altura según tus necesidades */
+        }
+
+        .custom-navbar .navbar-brand .{
+            color: white;
         }
     </style>
 
@@ -52,11 +65,13 @@
 
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+
+        <nav class="navbar navbar-expand-md navbar-light custom-navbar">
+
             <div class="container">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/CETI_Logo.png/776px-CETI_Logo.png"
                     alt="Logo CETI" class="Logo-CETI">
-                <a class="navbar-brand" href="{{ url('home') }}">Sistema de Inventarios</a>
+                <a class="navbar-brand" href="{{ url('home') }}" style="color: white">Sistema de Inventarios</a>
                 <!-- {{ config('app.name', 'Sistema de Inventarios') }} -->
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -72,11 +87,11 @@
                         @if (Auth::check())
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="{{ route('reportesConsultas.index') }}">{{ __('Reportes y Consultas') }}</a>
+                                    href="{{ route('reportesConsultas.index') }}" style="color: white">{{ __('Reportes y Consultas') }}</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('dataBase.index') }}">{{ __('Base de datos') }}</a>
+                                <a class="nav-link" href="{{ route('dataBase.index') }}" style="color: white">{{ __('Base de datos') }}</a>
                             </li>
 
                     </ul>
@@ -88,7 +103,7 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}" style="color: white">{{ __('Login') }}</a>
                                 </li>
                             @endif
                             {{-- @if (Route::has('register'))
@@ -99,8 +114,8 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color: white">
+                                    {{ Auth::user()->email }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -125,66 +140,7 @@
             @yield('content')
         </main>
     </div>
-    <style>
-        main {
-            padding: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-
-        .nav2 {
-            background-color: #ffffff;
-            display: flex;
-            left: 0;
-            position: fixed;
-            padding: 20px;
-            flex-direction: column;
-
-        }
-
-        .nav-link2 {
-            color: rgb(0, 0, 0);
-            text-decoration: none;
-            margin: 0 15px;
-            padding: 5px 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .nav-link2:hover {
-            background-color: #dfe3ff;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 20px;
-        }
-
-        nav ul li {
-            margin: 10px 0;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: white;
-        }
-    </style>
+    
     <!--  @if (Auth::check())
 <nav class="nav2">
             <ul>
