@@ -15,13 +15,15 @@ class UsuariosController extends Controller
     {
         $user = new User();
         $user->name = $request->name;
+        $user->email = $request->email;
+        $user->password = "";
         $user->save();
     }
     public function update(Request $request, User $user)
     {
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->password = null;
+        $user->password = "";
         $user->save();
     }
     public function delete(User $user)
