@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appCat')
 
 @section('template_title')
     Area
@@ -9,14 +9,14 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="height: 100%">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
                                 {{ __('Area') }}
                             </span>
 
-                            <div class="float-right">
+                            <div>
                                 <!-- Botón de Importar Excel / Form -->
                                 <form action="{{ route('areas.import.excel') }}" method="post" enctype="multipart/form-data">
                                     @csrf

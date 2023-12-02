@@ -14,7 +14,13 @@
     <title>Gestión de Inventarios</title>
 
 
-    
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <!-- MODIFICACION INCLUDE BOOTSTRAP - DAVID -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
     <link href="https://cdn.ceti.mx/siic/v2/favicon.ico" rel="shortcut icon">
     
     <!-- Custom fonts for this template-->
@@ -43,7 +49,45 @@
     <link href="https://cdn.ceti.mx/siic/v2/css/bootstrap-tagsinput.css" rel="stylesheet" />
     <script src="https://cdn.ceti.mx/siic/v2/js/bootstrap-tagsinput.js"></script>
 
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        .card-header{
+            height: 100%;
+        }
+        footer {
+
+            color: #000000;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .Logo-CETI {
+            width: 100px;
+            /* Cambia este valor según tus necesidades */
+            height: auto;
+            /* Para mantener la proporción original de la imagen */
+        }
+
+        .custom-navbar {
+            background-color: #035374;
+            color: white;
+            padding: 20px;
+            /* Ajusta el espacio interno según tus necesidades */
+            height: 80px;
+            /* Ajusta la altura según tus necesidades */
+        }
+
+        .custom-navbar .navbar-brand .{
+            color: white;
+        }
+    </style>
 
     
 
@@ -229,28 +273,25 @@
                 </li>
             </ul>
         </nav>
-        <div class="d-flex flex-column" id="content-wrapper">
-            <div id="content" style="max-height: 89.5vh; overflow: auto;margin-top: 100px !important;">
-                <div class="container h-85 moduloActivo" id="container-area">
-                    @yield('content')
-                    </div>
-                </div>
-            <div class="contenedorF">
-                <button class="botonF1">+</button>
-                <button class="btnF botonF2">+ A</button>
-                <button class="btnF botonF3">- A</button>
-                <button class="btnF botonF4" style="bottom: 60px;"><i class="fas fa-sync"></i></button>
-            </div>
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white" style="background-color: #373B40 !important;">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto text-white">
-                        <span>
-                            CENTRO DE ENSEÑANZA TÉCNICA INDUSTRIAL - DERECHOS RESERVADOS @ 2023                        </span>
-                    </div>
-                </div>
-            </footer>
+        <main class="py-4" style="max-height: 89.5vh; overflow: auto;margin-top: 100px !important;">
+            @yield('content')
+        </main>
+
+        <div class="contenedorF">
+            <button class="botonF1">+</button>
+            <button class="btnF botonF2">+ A</button>
+            <button class="btnF botonF3">- A</button>
+            <button class="btnF botonF4" style="bottom: 60px;"><i class="fas fa-sync"></i></button>
         </div>
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white" style="background-color: #373B40 !important;">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto text-white">
+                    <span>
+                        CENTRO DE ENSEÑANZA TÉCNICA INDUSTRIAL - DERECHOS RESERVADOS @ 2023                        </span>
+                </div>
+            </div>
+        </footer>
         <!--  Scripts-->
 
 

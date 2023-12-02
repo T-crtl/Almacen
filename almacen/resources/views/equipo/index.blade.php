@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.appCat')
 
 @section('template_title')
     Equipo
