@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,9 +15,9 @@
     <title>Gestión de Inventarios</title>
 
 
-    
+
     <link href="https://cdn.ceti.mx/siic/v2/favicon.ico" rel="shortcut icon">
-    
+
     <!-- Custom fonts for this template-->
     <link rel="stylesheet" href="https://cdn.ceti.mx/siic/v2/fontawesome-free/css/all.min.css">
 
@@ -43,11 +44,11 @@
     <link href="https://cdn.ceti.mx/siic/v2/css/bootstrap-tagsinput.css" rel="stylesheet" />
     <script src="https://cdn.ceti.mx/siic/v2/js/bootstrap-tagsinput.js"></script>
 
-    
 
-    
 
-    
+
+
+
     <script src="https://cdn.ceti.mx/siic/v2/popmenu.js"></script>
 
     <script src="https://unpkg.com/@yaireo/tagify"></script>
@@ -62,7 +63,7 @@
     </style>
     <style type="text/css">
         /* Chart.js */
-        @keyframes  chartjs-render-animation {
+        @keyframes chartjs-render-animation {
             from {
                 opacity: .99
             }
@@ -126,8 +127,8 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css">
 
-    
-    
+
+
 
 </head>
 
@@ -144,42 +145,48 @@
             style="background-size: cover;background-color: #1293D4;overflow-y: auto;overflow-x: hidden;height: 100vh;">
             <a class="sidebar-brand d-flex align-items-center justify-content-center bg-aquaCeti text-light"
                 href="index.php">
-                <img class="img-profile rounded-circle" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/CETI_Logo.png/776px-CETI_Logo.png" style="width: 50px;">
+                <img class="img-profile rounded-circle"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/CETI_Logo.png/776px-CETI_Logo.png"
+                    style="width: 50px;">
                 <div class="sidebar-brand-text mx-3">
                     Gestión de Inventarios Ceti
                 </div>
                 </img>
             </a>
 
-                            <li class="nav-item getModulos" data-ruta="modulos/prueba" data-method="get">
-                    <a class="nav-link module" module="c4ca4238a0b923820dcc509a6f75849b"
-                        style="width: auto !important;">
-                                                    <div class="card-body"
-                                style="background-color: #ffffff;-webkit-mask: url(icons/57.svg) no-repeat center;padding: 0.75rem !important;-webkit-mask-size: contain;">
-                            </div>
-                                                <div class="row text-center">
-                            <div class="col-md-12">
-                                Gestión
-                            </div>
+            <li class="nav-item getModulos" data-ruta="modulos/prueba" data-method="get">
+                <a class="nav-link module" module="c4ca4238a0b923820dcc509a6f75849b" style="width: auto !important;">
+                    <div class="card-body"
+                        style="background-color: #ffffff;-webkit-mask: url(icons/57.svg) no-repeat center;padding: 0.75rem !important;-webkit-mask-size: contain;">
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            Gestión
                         </div>
-                    </a>
-                </li>
-                <hr class="sidebar-divider">
+                    </div>
+                </a>
+            </li>
+            <hr class="sidebar-divider">
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
-            <div class="text-center d-none d-md-inline">
-                <a class="nav-link" href="{{ route('reportesConsultas.index') }}" style="color: white">{{ __('Reportes y Consultas') }}</a>
-            </div>
-            <div class="text-center d-none d-md-inline">
-                <a class="nav-link" href="{{ route('dataBase.index') }}" style="color: white">{{ __('Base de datos') }}</a>
-            </div>
+            @if (Auth::check())
+                <div class="text-center d-none d-md-inline">
+                    <a class="nav-link" href="{{ route('reportesConsultas.index') }}"
+                        style="color: white">{{ __('Reportes y Consultas') }}</a>
+                </div>
+                <div class="text-center d-none d-md-inline">
+                    <a class="nav-link" href="{{ route('dataBase.index') }}"
+                        style="color: white">{{ __('Base de datos') }}</a>
+                </div>
+            @endif
         </ul>
         <nav class="navbar navbar-expand navbar-light bg-aquaCeti text-light topbar mb-4 static-top shadow"
             style="position: absolute;z-index: 1000;width: 100vw;">
             <a class="sidebar-brand d-flex align-items-center justify-content-center bg-aquaCeti text-light"
                 href="">
-                <img class="img-profile rounded-circle" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/CETI_Logo.png/776px-CETI_Logo.png"style="width: 50px;">
+                <img class="img-profile rounded-circle"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/CETI_Logo.png/776px-CETI_Logo.png"style="width: 50px; ">
                 <div class="sidebar-brand-text mx-3">Sistema de Inventarios Ceti</div>
                 </img>
             </a>
@@ -189,26 +196,32 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item no-arrow">
                     <!--<form action="/logout" method="POST">
-                        <input type="hidden" name="_token" value="i7SvbgCPG7mmdiuqKrdlwoL7Lu1gHXOLVT6I6JYe">  -->                      
-                        <button style="background: none !important; border:none !important;"><a class="nav-link" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
+                        <input type="hidden" name="_token" value="i7SvbgCPG7mmdiuqKrdlwoL7Lu1gHXOLVT6I6JYe">  -->
+                    @if (Auth::check())
+                        <button style="background: none !important; border:none !important;"><a class="nav-link"
+                                href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Salir') }}
-                                    </a>
+                                {{ __('Salir') }}
+                            </a>
                             <!--<span class="mr-2 d-lg-inline text-white small">Salir</span>-->
-                        </a></button>
-                                    
+                            </a></button>
+                    @else
+                        <button style="background: none !important; border:none !important;">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('login') }}
+                            <!--<span class="mr-2 d-lg-inline text-white small">Salir</span>-->
+                            </a></button
+                    @endif
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                    <!--</form>-->
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                        <!--</form>-->
                 </li>
                 <div class="topbar-divider d-none d-sm-block"></div>
                 <li class="nav-item no-arrow">
                     <div class="btn-group">
-                        <a class="nav-link" aria-haspopup="true"
-                            aria-expanded="false">
+                        <a class="nav-link" aria-haspopup="true" aria-expanded="false">
                             @guest
                                 @if (Route::has('login'))
                                 @endif
@@ -216,7 +229,8 @@
                                 <span class="mr-2 d-lg-inline text-white small text-white">
                                     {{ Auth::user()->email }}
                                 </span>
-                                <img class="img-profile rounded-circle" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/CETI_Logo.png/776px-CETI_Logo.png">
+                                <img class="img-profile rounded-circle"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/CETI_Logo.png/776px-CETI_Logo.png">
                             @endguest
                         </a>
                         <!--<div class="dropdown-menu">
@@ -233,8 +247,8 @@
             <div id="content" style="max-height: 89.5vh; overflow: auto;margin-top: 100px !important;">
                 <div class="container h-85 moduloActivo" id="container-area">
                     @yield('content')
-                    </div>
                 </div>
+            </div>
             <div class="contenedorF">
                 <button class="botonF1">+</button>
                 <button class="btnF botonF2">+ A</button>
@@ -246,7 +260,7 @@
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto text-white">
                         <span>
-                            CENTRO DE ENSEÑANZA TÉCNICA INDUSTRIAL - DERECHOS RESERVADOS @ 2023                        </span>
+                            CENTRO DE ENSEÑANZA TÉCNICA INDUSTRIAL - DERECHOS RESERVADOS @ 2023 </span>
                     </div>
                 </div>
             </footer>
@@ -255,40 +269,40 @@
 
 
 
-<script src="https://cdn.ceti.mx/siic/v2/js/materialize.min.js"></script>
-<script src="https://cdn.ceti.mx/siic/v2/js/bootstrap.bundle.min.js"></script>
-<!-- Core plugin JavaScript-->
-<script src="https://cdn.ceti.mx/siic/v2/js/jquery.easing.min.js"></script>
-<!-- Custom scripts for all pages-->
-<script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
+        <script src="https://cdn.ceti.mx/siic/v2/js/materialize.min.js"></script>
+        <script src="https://cdn.ceti.mx/siic/v2/js/bootstrap.bundle.min.js"></script>
+        <!-- Core plugin JavaScript-->
+        <script src="https://cdn.ceti.mx/siic/v2/js/jquery.easing.min.js"></script>
+        <!-- Custom scripts for all pages-->
+        <script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
 
 
-<script src="https://cdn.ceti.mx/siic/v2/js/main.js"></script>
+        <script src="https://cdn.ceti.mx/siic/v2/js/main.js"></script>
 
 
 
 
 
-<!-- Page level plugins -->
-<script src="https://cdn.ceti.mx/siic/v2/js/Chart.js"></script>
-<!-- Page level custom scripts -->
-<script src="https://cdn.ceti.mx/siic/v2/js/chart-area-demo.js"></script>
-<script src="https://cdn.ceti.mx/siic/v2/js/chart-pie-demo.js"></script>
-<script src="https://cdn.ceti.mx/siic/v2/js/imask.js"></script>
-<script src="https://cdn.ceti.mx/siic/v2/js/sweetalert2.all.js"></script>
-<script src="https://cdn.ceti.mx/siic/v2/js/siic.js"></script>
-<script src="https://cdn.ceti.mx/siic/v2/js/reloj.js"></script>
-<script src="https://cdn.ceti.mx/siic/v2/js/app-siic1.0.0.js"></script>
-<script src="https://cdn.ceti.mx/siic/v2/js/app-contextMenu.js"></script>
-<!-- <script src="js/acciones.js"></script> -->
+        <!-- Page level plugins -->
+        <script src="https://cdn.ceti.mx/siic/v2/js/Chart.js"></script>
+        <!-- Page level custom scripts -->
+        <script src="https://cdn.ceti.mx/siic/v2/js/chart-area-demo.js"></script>
+        <script src="https://cdn.ceti.mx/siic/v2/js/chart-pie-demo.js"></script>
+        <script src="https://cdn.ceti.mx/siic/v2/js/imask.js"></script>
+        <script src="https://cdn.ceti.mx/siic/v2/js/sweetalert2.all.js"></script>
+        <script src="https://cdn.ceti.mx/siic/v2/js/siic.js"></script>
+        <script src="https://cdn.ceti.mx/siic/v2/js/reloj.js"></script>
+        <script src="https://cdn.ceti.mx/siic/v2/js/app-siic1.0.0.js"></script>
+        <script src="https://cdn.ceti.mx/siic/v2/js/app-contextMenu.js"></script>
+        <!-- <script src="js/acciones.js"></script> -->
 
-<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
-<script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
 
 </body>
 
