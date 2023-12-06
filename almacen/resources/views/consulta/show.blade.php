@@ -20,10 +20,7 @@
 
                     <div class="card-body">
                         
-                        <div class="form-group">
-                            <strong>Registro:</strong>
-                            {{ $consulta->cons->registro }}
-                        </div>
+                        
                         <div class="form-group">
                             <strong>Resguardatario:</strong>
                             {{ $consulta->cons->nombre }}

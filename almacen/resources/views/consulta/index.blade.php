@@ -1,10 +1,4 @@
-@extends('layouts.app')
 
-@section('template_title')
-    Consulta
-@endsection
-
-@section('content')
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -19,6 +13,11 @@
                              
                         </div>
                     </div>
+                    <div class="float-right">
+                        <a href="{{ route('consultas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                          {{ __('Create New') }}
+                        </a>
+                      </div>
                     @if ($message = Session::get('success'))
                         <div class="alert alert-success">
                             <p>{{ $message }}</p>
@@ -32,7 +31,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Registro</th>
+										
 										<th>Resguardatario</th>
 										<th>Fecha Asignada</th>
 										<th>Area</th>
@@ -58,7 +57,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $consulta->cons->registro }}</td>
+											
 											<td>{{ $consulta->cons->nombre }}</td>
 											<td>{{ $consulta->fecha }}</td>
 											<td>{{ $consulta->ubicacion->descripcion }}</td>
@@ -96,4 +95,4 @@
             </div>
         </div>
     </div>
-@endsection
+

@@ -1,10 +1,4 @@
-@extends('layouts.appCat')
 
-@section('template_title')
-    Equipo
-@endsection
-
-@section('content')
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -101,4 +95,4 @@
             </div>
         </div>
     </div>
-@endsection
+

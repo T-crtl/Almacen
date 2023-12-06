@@ -184,7 +184,7 @@
         <nav class="navbar navbar-expand navbar-light bg-aquaCeti text-light topbar mb-4 static-top shadow"
             style="position: absolute;z-index: 1000;width: 100vw;">
             <a class="sidebar-brand d-flex align-items-center justify-content-center bg-aquaCeti text-light"
-                href="">
+                href="/">
                 <img class="img-profile rounded-circle"
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/CETI_Logo.png/776px-CETI_Logo.png"style="width: 50px; ">
                 <div class="sidebar-brand-text mx-3">Sistema de Inventarios Ceti</div>

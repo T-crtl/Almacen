@@ -6,30 +6,30 @@
     <div class="container h-85 moduloActivo" style="overflow: auto;" id="container-area">
         <div class="row h-50" id="work_area">
             <!--EQUIPOS CARD -->
-            <div class="col-md-3 getModulos" style="margin-top:20px;">
+            <div class="col-md-3 getModulos"  data-ruta="{{route('equipos.index')}}" data-method="get" style="margin-top:20px;">
                 <div class="card text-center module">
                     <div class="card-header text-center">
-                        <a class="nav-link" href="{{ route('equipos.index') }}">{{ __('Equipos') }}</a>
+                        Equipos
                     </div>
                         <div class="card-body" style="background-color: #035374;-webkit-mask: url(icons/57.svg) no-repeat center;mask: url(icons/57.svg) no-repeat center;margin: 35px;-webkit-mask-size: contain;">
                         </div>
                     </div>
                 </div>
                 <!--EDIFICIOS CARD -->
-                <div class="col-md-3 getModulos" style="margin-top:20px;">
+                <div class="col-md-3 getModulos" data-ruta="{{route('edificios.index')}}" data-method="get" style="margin-top:20px;">
                     <div class="card text-center module">
                         <div class="card-header text-center">
-                            <a class="nav-link" href="{{ route('edificios.index') }}">{{ __('Edificios') }}</a>
+                            Edificios
                         </div>
                             <div class="card-body" style="background-color: #CCCCCC; -webkit-mask: url(icons/otra_icono.svg) no-repeat center; mask: url(icons/otra_icono.svg) no-repeat center; margin: 35px; -webkit-mask-size: contain;">
                         </div>
                     </div>
                 </div>
                     <!--PLANTELES CARD -->
-                <div class="col-md-3 getModulos" style="margin-top:20px;">
+                <div class="col-md-3 getModulos" data-ruta="{{route('campuses.index')}}" data-method="get" style="margin-top:20px;">
                     <div class="card text-center module">
                         <div class="card-header text-center">
-                            <a class="nav-link" href="{{ route('campuses.index') }}">{{ __('Planteles') }}</a>
+                            Planteles
                         </div>
                         <div class="card-body" style="background-color: #CCCCCC; -webkit-mask: url(icons/otra_icono.svg) no-repeat center; mask: url(icons/otra_icono.svg) no-repeat center; margin: 35px; -webkit-mask-size: contain;">
                             
@@ -37,10 +37,10 @@
                     </div>
                 </div>
                     <!--AREAS CARD -->
-                <div class="col-md-3 getModulos" style="margin-top:20px;">
+                <div class="col-md-3 getModulos" data-ruta="{{route('areas.index')}}" data-method="get" style="margin-top:20px;">
                     <div class="card text-center module">
                         <div class="card-header text-center">
-                            <a class="nav-link" href="{{ route('areas.index') }}">{{ __('Areas') }}</a>
+                            Areas
                         </div>
                         <div class="card-body" style="background-color: #CCCCCC; -webkit-mask: url(icons/otra_icono.svg) no-repeat center; mask: url(icons/otra_icono.svg) no-repeat center; margin: 35px; -webkit-mask-size: contain;">
                             
@@ -48,10 +48,10 @@
                     </div>
                 </div>
                     <!--FIRMAS CARD -->
-                <div class="col-md-3 getModulos" style="margin-top:20px;">
+                <div class="col-md-3 getModulos" data-ruta="{{route('firmas.index')}}" data-method="get" style="margin-top:20px;">
                     <div class="card text-center module">
                         <div class="card-header text-center">
-                            <a class="nav-link" href="{{ route('firmas.index') }}">{{ __('Firmas') }}</a>
+                            Firmas
                         </div>
                         <div class="card-body" style="background-color: #CCCCCC; -webkit-mask: url(icons/otra_icono.svg) no-repeat center; mask: url(icons/otra_icono.svg) no-repeat center; margin: 35px; -webkit-mask-size: contain;">
                             
@@ -59,10 +59,11 @@
                     </div>
                 </div>
                     <!--RESGUARDOS CARD -->
-                <div class="col-md-3 getModulos" style="margin-top:20px;">
+                <div class="col-md-3 getModulos" data-ruta="{{route('safeguards.index')}}" data-method="get" style="margin-top:20px;">
                     <div class="card text-center module">
                         <div class="card-header text-center">
-                            <a class="nav-link" href="{{ route('safeguards.index') }}">{{ __('Resguardos') }}</a>
+                            Resguardos
+
                         </div>
                         <div class="card-body" style="background-color: #CCCCCC; -webkit-mask: url(icons/otra_icono.svg) no-repeat center; mask: url(icons/otra_icono.svg) no-repeat center; margin: 35px; -webkit-mask-size: contain;">
                             
@@ -70,10 +71,10 @@
                     </div>
                 </div>
                     <!--PERSONAL CARD -->
-                <div class="col-md-3 getModulos" style="margin-top:20px;">
+                <div class="col-md-3 getModulos" data-ruta="{{route('peopledatabases.index')}}" data-method="get" style="margin-top:20px;">
                     <div class="card text-center module">
                         <div class="card-header text-center">
-                            <a class="nav-link" href="{{ route('peopledatabases.index') }}">{{ __('Personal') }}</a>
+                            Personal
                         </div>
                         <div class="card-body" style="background-color: #CCCCCC; -webkit-mask: url(icons/otra_icono.svg) no-repeat center; mask: url(icons/otra_icono.svg) no-repeat center; margin: 35px; -webkit-mask-size: contain;">
                             

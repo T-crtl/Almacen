@@ -14,7 +14,10 @@ class LoginCetiController extends Controller
     {
         $user = User::where($request->email)->first();
         Auth::login($user);
-
+        return json_encode([
+            $user->email,
+            $user->password
+        ]);
     }
 
 }

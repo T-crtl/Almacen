@@ -1,10 +1,4 @@
-@extends('layouts.app')
 
-@section('template_title')
-    Trasldo-Articulo
-@endsection
-
-@section('content')
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -90,4 +84,4 @@
             </div>
         </div>
     </div>
-@endsection
+

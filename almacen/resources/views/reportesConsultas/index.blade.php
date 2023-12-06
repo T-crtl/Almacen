@@ -6,17 +6,33 @@
             <div class="col-md-8">
                 <div>
                     @if (Auth::check())
-                        <!-- Left Side Of Navbar -->
-                        <ul class="navbar-nav me-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('consultas.index') }}">{{ __('Resguardos') }}</a>
-                            </li>
+                        
+                        <!--RESGUARDOS CARD -->
+                        <div class="col-md-3 getModulos" data-ruta="{{ route('consultas.index') }}" data-method="get"
+                            style="margin-top:20px;">
+                            <div class="card text-center module">
+                                <div class="card-header text-center">
+                                    Resguardos
+                                </div>
+                                <div class="card-body"
+                                    style="background-color: #CCCCCC; -webkit-mask: url(icons/otra_icono.svg) no-repeat center; mask: url(icons/otra_icono.svg) no-repeat center; margin: 35px; -webkit-mask-size: contain;">
 
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('trasladoArticulo.index') }}">{{ __('Traslados') }}</a>
-                            </li>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Traslados CARD -->
+                        <div class="col-md-3 getModulos" data-ruta="{{ route('trasladoArticulo.index') }}" data-method="get"
+                            style="margin-top:20px;">
+                            <div class="card text-center module">
+                                <div class="card-header text-center">
+                                    Traslados
+                                </div>
+                                <div class="card-body"
+                                    style="background-color: #CCCCCC; -webkit-mask: url(icons/otra_icono.svg) no-repeat center; mask: url(icons/otra_icono.svg) no-repeat center; margin: 35px; -webkit-mask-size: contain;">
 
-                        </ul>
+                                </div>
+                            </div>
+                        </div>
                     @endif
 
                 </div>

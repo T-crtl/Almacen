@@ -1,11 +1,6 @@
 <div class="box box-info padding-1">
     <div class="box-body">
         
-       
-            {{ Form::label('registro') }}
-            {{ Form::text('registro', $consulta->registro, ['class' => 'form-control' . ($errors->has('registro') ? ' is-invalid' : ''), 'placeholder' => 'Registro']) }}
-            {!! $errors->first('registro', '<div class="invalid-feedback">:message</div>') !!}
-        
         <div class="form-group">
             {{ Form::label('resguardatario') }}
             {{ Form::select('resguardatario', $nombre, $consulta->resguardatario, ['class' => 'form-control' . ($errors->has('resguardatario') ? ' is-invalid' : ''), 'placeholder' => 'Resguardatario']) }}
@@ -63,7 +58,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('fechaEntrada') }}
-            {{ Form::text('fechaEntrada', $consulta->fechaEntrada, ['class' => 'form-control' . ($errors->has('fechaEntrada') ? ' is-invalid' : ''), 'placeholder' => 'Fechaentrada']) }}
+            {{ Form::text('fechaEntrada', $consulta->fechaEntrada, ['class' => 'form-control' . ($errors->has('fechaEntrada') ? ' is-invalid' : ''), 'placeholder' => 'Fecha de entrada']) }}
             {!! $errors->first('fechaEntrada', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
