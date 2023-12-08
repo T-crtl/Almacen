@@ -1,5 +1,4 @@
-@extends('layouts.appTest')
-
+@extends('layouts.app')
 @section('content')
 <div class="row" id="work_area">
     <div class="container h-85 moduloActivo" style="overflow: auto;" id="container-area">

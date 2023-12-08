@@ -153,32 +153,40 @@
                 </div>
                 </img>
             </a>
-
-            <li class="nav-item getModulos" data-ruta="modulos/prueba" data-method="get">
+            @if (Auth::check())
+            <li class="nav-item getModulos" data-ruta="{{ route('reportesConsultas.index') }}" data-method="get">
                 <a class="nav-link module" module="c4ca4238a0b923820dcc509a6f75849b" style="width: auto !important;">
                     <div class="card-body"
                         style="background-color: #ffffff;-webkit-mask: url(icons/57.svg) no-repeat center;padding: 0.75rem !important;-webkit-mask-size: contain;">
                     </div>
                     <div class="row text-center">
                         <div class="col-md-12">
-                            Gestión
+                            <div class="text-center d-none d-md-inline">
+                                 Reportes y Consultas
+                            </div>
                         </div>
                     </div>
                 </a>
             </li>
             <hr class="sidebar-divider">
-            <div class="text-center d-none d-md-inline">
+            <!--<div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-            @if (Auth::check())
-                <div class="text-center d-none d-md-inline">
-                    <a class="nav-link" href="{{ route('reportesConsultas.index') }}"
-                        style="color: white">{{ __('Reportes y Consultas') }}</a>
-                </div>
-                <div class="text-center d-none d-md-inline">
-                    <a class="nav-link" href="{{ route('dataBase.index') }}"
-                        style="color: white">{{ __('Base de datos') }}</a>
-                </div>
+            </div>-->
+            <li class="nav-item getModulos" data-ruta="{{ route('dataBase.index') }}" data-method="get">
+                <a class="nav-link module" module="c4ca4238a0b923820dcc509a6f75849b" style="width: auto !important;">
+                    <div class="card-body"
+                        style="background-color: #ffffff;-webkit-mask: url(icons/57.svg) no-repeat center;padding: 0.75rem !important;-webkit-mask-size: contain;">
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-12">
+                            <div class="text-center d-none d-md-inline">
+                                 Base de datos
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <hr class="sidebar-divider">
             @endif
         </ul>
         <nav class="navbar navbar-expand navbar-light bg-aquaCeti text-light topbar mb-4 static-top shadow"

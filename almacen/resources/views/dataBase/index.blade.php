@@ -1,6 +1,4 @@
-@extends('layouts.appTest')
-
-@section('content')
+@extends('layouts.app')
 @if (Auth::check())
 <div class="row" id="work_area">
     <div class="container h-85 moduloActivo" style="overflow: auto;" id="container-area">
@@ -85,4 +83,3 @@
         </div>
     </div>
     @endif
-    @endsection
