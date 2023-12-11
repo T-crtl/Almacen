@@ -47,8 +47,10 @@ class SafeguardController extends Controller
 
         $safeguard = Safeguard::create($request->all());
 
-        return redirect()->route('safeguards.index')
-            ->with('success', 'Safeguard created successfully.');
+        return redirect()->route('home');
+
+        // return redirect()->route('safeguards.index')
+        //     ->with('success', 'Safeguard created successfully.');
     }
 
     /**
@@ -90,8 +92,10 @@ class SafeguardController extends Controller
 
         $safeguard->update($request->all());
 
-        return redirect()->route('safeguards.index')
-            ->with('success', 'Safeguard updated successfully');
+        return redirect()->route('home');
+
+        // return redirect()->route('safeguards.index')
+        //     ->with('success', 'Safeguard updated successfully');
     }
 
     /**
@@ -103,7 +107,9 @@ class SafeguardController extends Controller
     {
         $safeguard = Safeguard::find($id)->delete();
 
-        return redirect()->route('safeguards.index')
-            ->with('success', 'Safeguard deleted successfully');
+        return redirect()->route('home');
+        
+        // return redirect()->route('safeguards.index')
+        //     ->with('success', 'Safeguard deleted successfully');
     }
 }
