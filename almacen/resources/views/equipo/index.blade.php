@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header" style="height: 100%">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
@@ -15,14 +15,14 @@
                                 <form action=" {{ route('equipos.import.excel')}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <input type="file" name="file">
-                                    <button class="btn btn-success btn-sm float-right"> Importar usuarios</button>
+                                    <button class="btn btn-success btn-sm float-right"> Importar archivo</button>
                                     </form>
                                 <!--- ====================      BOTON DE DESCARGAR EXCEL     ==================== -->
                                 <a href="{{ route('equipos.excel') }}" class="btn btn-success btn-sm float-right"  data-placement="left">
                                     {{ __('Descargar excel') }}
                                   </a>
                                 <a href="{{ route('equipos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Agregar Equipo') }}
                                 </a>
 
                               </div>
@@ -77,12 +77,16 @@
 
                                             <td>
                                                 <form action="{{ route('equipos.destroy',$equipo->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('equipos.show',$equipo->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('equipos.edit',$equipo->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                    <a class="btn btn-sm btn-primary ver" data-url="{{ route('equipos.show',$equipo->id) }}">
+                                                        <i class="fa fa-fw fa-eye"></i> {{ __('Mostrar') }}</a>
+                                                    <a class="btn btn-sm btn-success ver" data-url="{{ route('equipos.edit',$equipo->id) }}">
+                                                        <i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm">
+                                                        <i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
                                                 </form>
+                                                
                                             </td>
                                         </tr>
                                     @endforeach
