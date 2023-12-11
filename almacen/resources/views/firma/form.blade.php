@@ -28,6 +28,6 @@
     </div>
     <div><br></div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">{{ __('Aceptar') }}</button>
+        <button type="submit" class="btn btn-primary">{{ __('Guardar') }}</button>
     </div>
 </div>
