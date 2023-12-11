@@ -7,12 +7,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Campus') }}
+                                {{ __('Planteles') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('campuses.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Agregar plantel') }}
                                 </a>
                               </div>
                         </div>
@@ -30,9 +30,9 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Numero</th>
-										<th>Descripcion</th>
-										<th>Ubicacion</th>
+										<th>Número</th>
+										<th>Descripción</th>
+										<th>Ubicación</th>
 
                                         <th></th>
                                     </tr>
@@ -48,11 +48,11 @@
 
                                             <td>
                                                 <form action="{{ route('campuses.destroy',$campus->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('campuses.show',$campus->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('campuses.edit',$campus->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                    <a class="btn btn-sm btn-primary ver" data-url="{{ route('campuses.show',$campus->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Mostrar') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('campuses.edit',$campus->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
                                                 </form>
                                             </td>
                                         </tr>

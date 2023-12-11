@@ -47,8 +47,10 @@ class CampusController extends Controller
 
         $campus = Campus::create($request->all());
 
-        return redirect()->route('campuses.index')
-            ->with('success', 'Campus created successfully.');
+        return redirect()->route('home');
+
+        // return redirect()->route('campuses.index')
+        //     ->with('success', 'Campus created successfully.');
     }
 
     /**
@@ -90,8 +92,10 @@ class CampusController extends Controller
 
         $campus->update($request->all());
 
-        return redirect()->route('campuses.index')
-            ->with('success', 'Campus updated successfully');
+        return redirect()->route('home');
+
+        // return redirect()->route('campuses.index')
+        //     ->with('success', 'Campus updated successfully');
     }
 
     /**
@@ -103,7 +107,9 @@ class CampusController extends Controller
     {
         $campus = Campus::find($id)->delete();
 
-        return redirect()->route('campuses.index')
-            ->with('success', 'Campus deleted successfully');
+        return redirect()->route('home');
+
+        // return redirect()->route('campuses.index')
+        //     ->with('success', 'Campus deleted successfully');
     }
 }
