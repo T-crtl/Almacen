@@ -17,7 +17,7 @@
                                     <div class="input-group">
                                         <input type="file" name="file" class="form-control-file">
                                         <div class="input-group-append">
-                                            <button class="btn btn-success" type="submit">Importar usuarios</button>
+                                            <button class="btn btn-success" type="submit">Importar archivo</button>
                                         </div>
                                     </div>
                                 </form>
@@ -26,7 +26,7 @@
                                 <a href="{{ route('areas.excel') }}" class="btn btn-success">Descargar Excel</a>
                                 
                                 <!-- Botón para Crear Nuevo -->
-                                <a href="{{ route('areas.create') }}" class="btn btn-primary">Crear Nueva Area</a>
+                                <a href="{{ route('areas.create') }}" class="btn btn-primary">Agregar Area</a>
                             </div>
                             
                         </div>
@@ -70,16 +70,16 @@
 
                                             <td>
                                                 <form action="{{ route('areas.destroy', $area->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary "
-                                                        href="{{ route('areas.show', $area->id) }}"><i
-                                                            class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-primary ver"
+                                                        data-url="{{ route('areas.show', $area->id) }}"><i
+                                                            class="fa fa-fw fa-eye"></i> {{ __('Mostrar') }}</a>
                                                     <a class="btn btn-sm btn-success"
                                                         href="{{ route('areas.edit', $area->id) }}"><i
-                                                            class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                            class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i
-                                                            class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                                            class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
                                                 </form>
                                             </td>
                                         </tr>

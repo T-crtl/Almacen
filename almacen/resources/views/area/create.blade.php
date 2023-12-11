@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ __('Create') }} Area
+    {{ __('Crear') }} Area
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Create') }} Area</span>
+                        <span class="card-title">{{ __('Nueva') }} Area</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('areas.store') }}"  role="form" enctype="multipart/form-data">

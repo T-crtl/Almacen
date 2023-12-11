@@ -57,8 +57,10 @@ class AreaController extends Controller
 
         $area = Area::create($request->all());
 
-        return redirect()->route('areas.index')
-            ->with('success', 'Area created successfully.');
+        return redirect()->route('home');
+
+        // return redirect()->route('areas.index')
+        //     ->with('success', 'Area created successfully.');
     }
 
     /**
@@ -103,8 +105,10 @@ class AreaController extends Controller
 
         $area->update($request->all());
 
-        return redirect()->route('areas.index')
-            ->with('success', 'Area updated successfully');
+        return redirect()->route('home');
+
+        // return redirect()->route('areas.index')
+        //     ->with('success', 'Area updated successfully');
     }
 
     /**
@@ -116,8 +120,10 @@ class AreaController extends Controller
     {
         $area = Area::find($id)->delete();
 
-        return redirect()->route('areas.index')
-            ->with('success', 'Area deleted successfully');
+        return redirect()->route('home');
+
+        // return redirect()->route('areas.index')
+        //     ->with('success', 'Area deleted successfully');
     }
     //Configurar exportar e importar  
     public function exportExcel()
@@ -133,8 +139,10 @@ class AreaController extends Controller
             $file = $request->file('file');
             Excel::import(new AreaImport, $file);
 
-            return redirect()->route('areas.index')
-                ->with('success', 'Excel cargado correctamente.');
+            return redirect()->route('home');
+            
+            // return redirect()->route('areas.index')
+            //     ->with('success', 'Excel cargado correctamente.');
         }
     }
 }
