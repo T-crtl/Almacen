@@ -20,7 +20,7 @@
                     data-method="PUT"
                     data-form="#frmActualizaEquipo"
                     data-reloadData="true"
-                    data-reloadAction=""
+                    data-reloadAction=".tabModulo.active"
                     >Actualizar</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                 </div>

@@ -1,4 +1,4 @@
-
+<div class="containter2">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -10,11 +10,12 @@
                                 {{ __('Planteles') }}
                             </span>
 
-                             <div class="float-right">
-                                <a href="{{ route('campuses.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Agregar plantel') }}
+                            <div class="float-right">
+                                <a href="{{ route('campuses.create') }}" class="btn btn-primary btn-sm float-right"
+                                    data-placement="left">
+                                    {{ __('Agregar plantel') }}
                                 </a>
-                              </div>
+                            </div>
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
@@ -29,10 +30,10 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Número</th>
-										<th>Descripción</th>
-										<th>Ubicación</th>
+
+                                        <th>Número</th>
+                                        <th>Descripción</th>
+                                        <th>Ubicación</th>
 
                                         <th></th>
                                     </tr>
@@ -41,18 +42,25 @@
                                     @foreach ($campuses as $campus)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $campus->numero }}</td>
-											<td>{{ $campus->descripcion }}</td>
-											<td>{{ $campus->ubicacion }}</td>
+
+                                            <td>{{ $campus->numero }}</td>
+                                            <td>{{ $campus->descripcion }}</td>
+                                            <td>{{ $campus->ubicacion }}</td>
 
                                             <td>
-                                                <form action="{{ route('campuses.destroy',$campus->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary ver" data-url="{{ route('campuses.show',$campus->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Mostrar') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('campuses.edit',$campus->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
+                                                <form action="{{ route('campuses.destroy', $campus->id) }}"
+                                                    method="POST">
+                                                    <a class="btn btn-sm btn-primary ver"
+                                                        data-url="{{ route('campuses.show', $campus->id) }}"><i
+                                                            class="fa fa-fw fa-eye"></i> {{ __('Mostrar') }}</a>
+                                                    <a class="btn btn-sm btn-success"
+                                                        href="{{ route('campuses.edit', $campus->id) }}"><i
+                                                            class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i
+                                                            class="fa fa-fw fa-trash"></i>
+                                                        {{ __('Eliminar') }}</button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -66,4 +74,4 @@
             </div>
         </div>
     </div>
-
+</div>

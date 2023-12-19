@@ -1,4 +1,4 @@
-
+<div class="containter2">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -12,7 +12,8 @@
 
                             <div>
                                 <!-- Botón de Importar Excel / Form -->
-                                <form action="{{ route('areas.import.excel') }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('areas.import.excel') }}" method="post"
+                                    enctype="multipart/form-data">
                                     @csrf
                                     <div class="input-group">
                                         <input type="file" name="file" class="form-control-file">
@@ -21,14 +22,14 @@
                                         </div>
                                     </div>
                                 </form>
-                                
+
                                 <!-- Botón de Descargar Excel -->
                                 <a href="{{ route('areas.excel') }}" class="btn btn-success">Descargar Excel</a>
-                                
+
                                 <!-- Botón para Crear Nuevo -->
                                 <a href="{{ route('areas.create') }}" class="btn btn-primary">Agregar Area</a>
                             </div>
-                            
+
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
@@ -79,7 +80,8 @@
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i
-                                                            class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
+                                                            class="fa fa-fw fa-trash"></i>
+                                                        {{ __('Eliminar') }}</button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -93,4 +95,4 @@
             </div>
         </div>
     </div>
-
+</div>

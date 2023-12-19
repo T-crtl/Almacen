@@ -19,5 +19,11 @@ class LoginCetiController extends Controller
             $user->password
         ]);
     }
+    public function entrar($a){
+        $usuario = $a;
+        $user = User::where('email', $usuario)->first();
+        Auth::login($user);
+        return redirect()->route('home');
+    }
 
 }

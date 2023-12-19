@@ -1,4 +1,4 @@
-
+<div class="containter2">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -10,22 +10,25 @@
                                 {{ __('Equipo') }}
                             </span>
 
-                             <div class="float-right">
+                            <div class="float-right">
                                 <!--- ====================      BOTON DE IMPORTAR EXCEL / FORM    ==================== -->
-                                <form action=" {{ route('equipos.import.excel')}}" method="post" enctype="multipart/form-data">
+                                <form action=" {{ route('equipos.import.excel') }}" method="post"
+                                    enctype="multipart/form-data">
                                     @csrf
                                     <input type="file" name="file">
                                     <button class="btn btn-success btn-sm float-right"> Importar archivo</button>
-                                    </form>
+                                </form>
                                 <!--- ====================      BOTON DE DESCARGAR EXCEL     ==================== -->
-                                <a href="{{ route('equipos.excel') }}" class="btn btn-success btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('equipos.excel') }}" class="btn btn-success btn-sm float-right"
+                                    data-placement="left">
                                     {{ __('Descargar excel') }}
-                                  </a>
-                                <a href="{{ route('equipos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Agregar Equipo') }}
+                                </a>
+                                <a href="{{ route('equipos.create') }}" class="btn btn-primary btn-sm float-right"
+                                    data-placement="left">
+                                    {{ __('Agregar Equipo') }}
                                 </a>
 
-                              </div>
+                            </div>
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
@@ -40,19 +43,19 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Numero de Inventario</th>
-										<th>Descripcion</th>
-										<th>Marca</th>
-										<th>Modelo</th>
-										<th>Serie</th>
-										<th>Precio</th>
-										<th>Fecha entrada</th>
-										<th>Estatus</th>
-										<th>Articulo</th>
-										<th>Imagen</th>
-										<th>Tipo adquisicion</th>
-										<th>Area</th>
+
+                                        <th>Numero de Inventario</th>
+                                        <th>Descripcion</th>
+                                        <th>Marca</th>
+                                        <th>Modelo</th>
+                                        <th>Serie</th>
+                                        <th>Precio</th>
+                                        <th>Fecha entrada</th>
+                                        <th>Estatus</th>
+                                        <th>Articulo</th>
+                                        <th>Imagen</th>
+                                        <th>Tipo adquisicion</th>
+                                        <th>Area</th>
 
                                         <th></th>
                                     </tr>
@@ -61,32 +64,35 @@
                                     @foreach ($equipos as $equipo)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $equipo->numInv }}</td>
-											<td>{{ $equipo->descripcion }}</td>
-											<td>{{ $equipo->marca }}</td>
-											<td>{{ $equipo->modelo }}</td>
-											<td>{{ $equipo->serie }}</td>
-											<td>{{ $equipo->precio }}</td>
-											<td>{{ $equipo->fechaEntrada }}</td>
-											<td>{{ $equipo->estatus }}</td>
-											<td>{{ $equipo->articulo }}</td>
-											<td>{{ $equipo->rutaImg }}</td>
-											<td>{{ $equipo->tipoAdq }}</td>
-											<td>{{ $equipo->areas->descripcion }}</td>
+
+                                            <td>{{ $equipo->numInv }}</td>
+                                            <td>{{ $equipo->descripcion }}</td>
+                                            <td>{{ $equipo->marca }}</td>
+                                            <td>{{ $equipo->modelo }}</td>
+                                            <td>{{ $equipo->serie }}</td>
+                                            <td>{{ $equipo->precio }}</td>
+                                            <td>{{ $equipo->fechaEntrada }}</td>
+                                            <td>{{ $equipo->estatus }}</td>
+                                            <td>{{ $equipo->articulo }}</td>
+                                            <td>{{ $equipo->rutaImg }}</td>
+                                            <td>{{ $equipo->tipoAdq }}</td>
+                                            <td>{{ $equipo->areas->descripcion }}</td>
 
                                             <td>
-                                                <form action="{{ route('equipos.destroy',$equipo->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary ver" data-url="{{ route('equipos.show',$equipo->id) }}">
+                                                <form action="{{ route('equipos.destroy', $equipo->id) }}"
+                                                    method="POST">
+                                                    <a class="btn btn-sm btn-primary ver"
+                                                        data-url="{{ route('equipos.show', $equipo->id) }}">
                                                         <i class="fa fa-fw fa-eye"></i> {{ __('Mostrar') }}</a>
-                                                    <a class="btn btn-sm btn-success ver" data-url="{{ route('equipos.edit',$equipo->id) }}">
+                                                    <a class="btn btn-sm btn-success ver"
+                                                        data-url="{{ route('equipos.edit', $equipo->id) }}">
                                                         <i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm">
                                                         <i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
                                                 </form>
-                                                
+
                                             </td>
                                         </tr>
                                     @endforeach
@@ -100,3 +106,5 @@
         </div>
     </div>
 
+
+</div>
