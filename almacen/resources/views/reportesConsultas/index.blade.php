@@ -1,41 +1,17 @@
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div>
-                    @if (Auth::check())
-                        
-                        <!--RESGUARDOS CARD -->
-                        <div class="col-md-3 getModulos" data-ruta="{{ route('consultas.index') }}" data-method="get"
-                            style="margin-top:20px;">
-                            <div class="card text-center module">
-                                <div class="card-header text-center">
-                                    Resguardos
-                                </div>
-                                <div class="card-body"
-                                    style="background-color: #CCCCCC; -webkit-mask: url(icons/otra_icono.svg) no-repeat center; mask: url(icons/otra_icono.svg) no-repeat center; margin: 35px; -webkit-mask-size: contain;">
-
-                                </div>
-                            </div>
-                        </div>
-                        <!--Traslados CARD -->
-                        <div class="col-md-3 getModulos" data-ruta="{{ route('trasladoArticulo.index') }}" data-method="get"
-                            style="margin-top:20px;">
-                            <div class="card text-center module">
-                                <div class="card-header text-center">
-                                    Traslados
-                                </div>
-                                <div class="card-body"
-                                    style="background-color: #CCCCCC; -webkit-mask: url(icons/otra_icono.svg) no-repeat center; mask: url(icons/otra_icono.svg) no-repeat center; margin: 35px; -webkit-mask-size: contain;">
-
-                                </div>
-                            </div>
-                        </div>
-                    @endif
-
-                </div>
-            </div>
-        </div>
-
-<!-- Page level custom scripts -->
-<script src="https://cdn.ceti.mx/siic/v2/js/siic.js"></script>
-<script src="https://cdn.ceti.mx/siic/v2/js/app-siic1.0.0.js"></script>
+<ul class="nav nav-tabs w-100" id="myTab" role="tablist" style="font-size: 12px;">
+    <li class="nav-item pr-1 text-center radius-top-30" style="width: fit-content !important;">
+        <a class="nav-item nav-link active tabModulo" id="tab-1" data-toggle="tab" href="#modulo1"
+            role="tab">Resguardos</a>
+    </li>
+    <li class="nav-item pr-1 text-center radius-top-30" style="width: fit-content !important;">
+        <a class="nav-item nav-link tabModulo" id="tab-2" data-toggle="tab" href="#modulo2"
+            role="tab">Traslados</a>
+    </li>
+</ul>
+<div class="tab-content">
+    <div class="tab-pane show active getViewModulo" data-route="{{ route('consultas.index') }}" id="modulo1"
+        role="tabpanel">
+    </div>
+    <div class="tab-pane getViewModulo" data-route="{{ route('trasladoArticulo.index') }}" id="modulo2"
+        role="tabpanel"></div>
+</div>

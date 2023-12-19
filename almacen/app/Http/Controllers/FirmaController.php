@@ -50,8 +50,10 @@ class FirmaController extends Controller
 
         $firma = Firma::create($request->all());
 
-        return redirect()->route('firmas.index')
-            ->with('success', 'Firma created successfully.');
+        return redirect()->route('home');
+
+        // return redirect()->route('firmas.index')
+        //     ->with('success', 'Firma created successfully.');
     }
 
     /**
@@ -94,8 +96,10 @@ class FirmaController extends Controller
 
         $firma->update($request->all());
 
-        return redirect()->route('firmas.index')
-            ->with('success', 'Firma updated successfully');
+        return redirect()->route('home');
+
+        // return redirect()->route('firmas.index')
+        //     ->with('success', 'Firma updated successfully');
     }
 
     /**
@@ -107,7 +111,9 @@ class FirmaController extends Controller
     {
         $firma = Firma::find($id)->delete();
 
-        return redirect()->route('firmas.index')
-            ->with('success', 'Firma deleted successfully');
+        return redirect()->route('home');
+        
+        // return redirect()->route('firmas.index')
+        //     ->with('success', 'Firma deleted successfully');
     }
 }

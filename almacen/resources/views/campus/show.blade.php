@@ -1,41 +1,26 @@
-@extends('layouts.app')
-
-@section('template_title')
-    {{ $campus->name ?? "{{ __('Show') Campus" }}
-@endsection
-
-@section('content')
-    <section class="content container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Campus</span>
-                        </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('campuses.index') }}"> {{ __('Back') }}</a>
-                        </div>
+    <div class="modal draggable">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Ver registro</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <strong>Numero:</strong>
+                        {{ $campus->numero }}
                     </div>
-
-                    <div class="card-body">
-                        
-                        <div class="form-group">
-                            <strong>Numero:</strong>
-                            {{ $campus->numero }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Descripcion:</strong>
-                            {{ $campus->descripcion }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Ubicacion:</strong>
-                            {{ $campus->ubicacion }}
-                        </div>
-
+                    <div class="form-group">
+                        <strong>Descripcion:</strong>
+                        {{ $campus->descripcion }}
                     </div>
+                    <div class="form-group">
+                        <strong>Ubicacion:</strong>
+                        {{ $campus->ubicacion }}
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                 </div>
             </div>
         </div>
-    </section>
-@endsection
+    </div>

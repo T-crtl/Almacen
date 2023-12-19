@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Update') }} Personal</span>
+                        <span class="card-title">{{ __('Editar') }} Personal</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('peopledatabases.update', $peopledatabase->id) }}"  role="form" enctype="multipart/form-data">

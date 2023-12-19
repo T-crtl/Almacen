@@ -2,23 +2,23 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('numero') }}
-            {{ Form::text('numero', $campus->numero, ['class' => 'form-control' . ($errors->has('numero') ? ' is-invalid' : ''), 'placeholder' => 'Numero']) }}
+            {{ Form::label('número') }}
+            {{ Form::text('numero', $campus->numero, ['class' => 'form-control' . ($errors->has('numero') ? ' is-invalid' : ''), 'placeholder' => 'Número']) }}
             {!! $errors->first('numero', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('descripcion') }}
-            {{ Form::text('descripcion', $campus->descripcion, ['class' => 'form-control' . ($errors->has('descripcion') ? ' is-invalid' : ''), 'placeholder' => 'Descripcion']) }}
+            {{ Form::label('descripción') }}
+            {{ Form::text('descripcion', $campus->descripcion, ['class' => 'form-control' . ($errors->has('descripcion') ? ' is-invalid' : ''), 'placeholder' => 'Descripción']) }}
             {!! $errors->first('descripcion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('ubicacion') }}
-            {{ Form::text('ubicacion', $campus->ubicacion, ['class' => 'form-control' . ($errors->has('ubicacion') ? ' is-invalid' : ''), 'placeholder' => 'Ubicacion']) }}
+            {{ Form::label('ubicación') }}
+            {{ Form::text('ubicacion', $campus->ubicacion, ['class' => 'form-control' . ($errors->has('ubicacion') ? ' is-invalid' : ''), 'placeholder' => 'Ubicación']) }}
             {!! $errors->first('ubicacion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+        <button type="submit" class="btn btn-primary">{{ __('Guardar') }}</button>
     </div>
 </div>

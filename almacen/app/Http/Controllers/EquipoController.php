@@ -52,9 +52,11 @@ class EquipoController extends Controller
         request()->validate(Equipo::$rules);
 
         $equipo = Equipo::create($request->all());
+        
+        return redirect()->route('home');
 
-        return redirect()->route('equipos.index')
-            ->with('success', 'Equipo created successfully.');
+        // return redirect()->route('equipos.index')
+        //     ->with('success', 'Equipo created successfully.');
     }
 
     /**
@@ -97,8 +99,14 @@ class EquipoController extends Controller
 
         $equipo->update($request->all());
 
-        return redirect()->route('equipos.index')
-            ->with('success', 'Equipo updated successfully');
+        return response()->json([
+            true,
+            'Equipo actualizado',
+            'Equipo actualizado correctamente',
+            'success',
+        ]);
+        /*return redirect()->route('equipos.index')
+            ->with('success', 'Equipo updated successfully');*/
     }
 
     /**
@@ -110,8 +118,14 @@ class EquipoController extends Controller
     {
         $equipo = Equipo::find($id)->delete();
 
-        return redirect()->route('equipos.index')
-            ->with('success', 'Equipo deleted successfully');
+        return redirect()->route('home');
+
+        /*return response()->json([
+            true,
+            'Registro eliminado',
+            'Registro eliminado correctamente',
+            'warning',
+        ]);*/
     }
 
     public function exportExcel()
@@ -124,7 +138,8 @@ class EquipoController extends Controller
         $file = $request->file('file');
         Excel::import(new EquipoImport, $file);
 
-        return redirect()->route('equipos.index')
-            ->with('success', 'Excel cargado correctamente.');
+        return redirect()->route('home');
+        // return redirect()->route('equipos.index')
+        //     ->with('success', 'Excel cargado correctamente.');
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ __('Create') }} Firma
+    {{ __('Crear') }} Firma
 @endsection
 
 @section('content')

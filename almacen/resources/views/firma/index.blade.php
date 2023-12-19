@@ -7,12 +7,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Base de datos Firma') }}
+                                {{ __('Base de datos Firmas') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('firmas.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Añadir') }}
+                                  {{ __('Agregar Firma') }}
                                 </a>
                               </div>
                         </div>
@@ -50,7 +50,7 @@
 
                                             <td>
                                                 <form action="{{ route('firmas.destroy',$firma->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('firmas.show',$firma->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Mas Info') }}</a>
+                                                    <a class="btn btn-sm btn-primary ver" data-url="{{ route('firmas.show',$firma->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Mostrar') }}</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('firmas.edit',$firma->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')

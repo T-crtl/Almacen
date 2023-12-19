@@ -50,8 +50,10 @@ class PeopledatabaseController extends Controller
 
         $peopledatabase = Peopledatabase::create($request->all());
 
-        return redirect()->route('peopledatabases.index')
-            ->with('success', 'Peopledatabase created successfully.');
+        return redirect()->route('home');
+
+        // return redirect()->route('peopledatabases.index')
+        //     ->with('success', 'Peopledatabase created successfully.');
     }
 
     /**
@@ -93,8 +95,10 @@ class PeopledatabaseController extends Controller
 
         $peopledatabase->update($request->all());
 
-        return redirect()->route('peopledatabases.index')
-            ->with('success', 'Peopledatabase updated successfully');
+        return redirect()->route('home');
+
+        // return redirect()->route('peopledatabases.index')
+        //     ->with('success', 'Peopledatabase updated successfully');
     }
 
     /**
@@ -106,7 +110,9 @@ class PeopledatabaseController extends Controller
     {
         $peopledatabase = Peopledatabase::find($id)->delete();
 
-        return redirect()->route('peopledatabases.index')
-            ->with('success', 'Peopledatabase deleted successfully');
+        return redirect()->route('home');
+        
+        // return redirect()->route('peopledatabases.index')
+        //     ->with('success', 'Peopledatabase deleted successfully');
     }
 }
