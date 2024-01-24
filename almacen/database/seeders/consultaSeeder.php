@@ -17,6 +17,7 @@ class consultaSeeder extends Seeder
         $fechaEspecifica = Carbon::createFromDate(2000, 4, 24);
         //
         Consulta::create([
+            'nomina' => 1,
             'resguardatario' => 1,
             'fecha' => $fechaEspecifica,
             'area' => 1,
@@ -28,6 +29,7 @@ class consultaSeeder extends Seeder
             'inventarios' => 1,
         ]);
         Consulta::create([
+            'nomina' => 2,
             'resguardatario' => 1,
             'fecha' => $fechaEspecifica,
             'area' => 2,

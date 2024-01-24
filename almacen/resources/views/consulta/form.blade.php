@@ -1,11 +1,40 @@
 <div class="box box-info padding-1">
     <div class="box-body">
-        
+        <div class="form-group">
+            {{ Form::label('nomina') }}
+            {{ Form::select('nomina', $nominas, $consulta->nomina, ['class' => 'form-control', 'id' => 'nomina', 'placeholder' => 'Nomina']) }}
+            {!! $errors->first('nomina', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+
         <div class="form-group">
             {{ Form::label('resguardatario') }}
-            {{ Form::select('resguardatario', $nombre, $consulta->resguardatario, ['class' => 'form-control' . ($errors->has('resguardatario') ? ' is-invalid' : ''), 'placeholder' => 'Resguardatario']) }}
+            {{ Form::select('resguardatario', $nombres, $consulta->resguardatario, ['class' => 'form-control', 'id' => 'resguardatario', 'placeholder' => 'Resguardatario']) }}
             {!! $errors->first('resguardatario', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#nomina').change(function() {
+                    var nominaId = $(this).val();
+
+                    // Realizar la solicitud AJAX
+                    $.ajax({
+                        type: 'GET',
+                        url: '/obtener-resguardatarios/' + nominaId,
+                        success: function(data) {
+                            // Actualizar dinámicamente el campo resguardatario
+                            $('#resguardatario').empty(); // Limpiar opciones existentes
+                            $.each(data, function(key, value) {
+                                $('#resguardatario').append('<option value="' + key + '">' +
+                                    value + '</option>');
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
+
         <div class="form-group">
             {{ Form::label('fecha') }}
             {{ Form::text('fecha', $consulta->fecha, ['class' => 'form-control' . ($errors->has('fecha') ? ' is-invalid' : ''), 'placeholder' => 'Fecha']) }}
@@ -28,7 +57,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('numInv') }}
-            {{ Form::text('numInv', $consulta->numInv, ['class' => 'form-control' . ($errors->has('numInv') ? ' is-invalid' : ''), 'placeholder' => 'Numinv']) }}
+            {{ Form::text('numInv', $consulta->numInv, ['class' => 'form-control' . ($errors->has('numInv') ? ' is-invalid' : ''), 'placeholder' => 'Numero de Inventario']) }}
             {!! $errors->first('numInv', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

@@ -38,6 +38,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'b@gmail.com',
             'password' => '123456789',
         ]);
-        $this->call(consultaSeeder::class);
+        //$this->call(consultaSeeder::class);
     }
 }

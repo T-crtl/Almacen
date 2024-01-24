@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('NivelPuesto', 30);
             $table->string('firmasId');
             $table->timestamps();
+
+            $table->foreign('PlantelID')->references('id')->on('campuses')->onDelete("cascade");
+
         });
     }
 

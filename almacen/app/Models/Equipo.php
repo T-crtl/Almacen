@@ -30,7 +30,7 @@ class Equipo extends Model
 {
     
     static $rules = [
-		'numInv' => 'required',
+		
 		'descripcion' => 'required',
 		'marca' => 'required',
 		'modelo' => 'required',
@@ -46,7 +46,7 @@ class Equipo extends Model
      *
      * @var array
      */
-    protected $fillable = ['numInv','descripcion','marca','modelo','serie','precio','fechaEntrada','estatus','articulo','rutaImg','tipoAdq','areaId'];
+    protected $fillable = ['descripcion','marca','modelo','serie','precio','fechaEntrada','estatus','articulo','rutaImg','tipoAdq','areaId'];
 
     /**
     *@return \Illuminate\Database\Eloquent\Relations\HasOne

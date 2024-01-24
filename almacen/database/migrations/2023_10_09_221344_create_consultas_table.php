@@ -14,19 +14,35 @@ return new class extends Migration
     {
         Schema::create('consultas', function (Blueprint $table) {
             $table->id();
-            //$table->integer('registro')->unique();
-            $table->integer('resguardatario');
+            $table->bigInteger('nomina')->unsigned();
+            $table->foreign('nomina')
+                ->references('id')
+                ->on('peopledatabases')
+                ->onDelete("cascade");
+            $table->bigInteger('resguardatario')->unsigned();
+            $table->foreign('resguardatario')
+                ->references('id')
+                ->on('peopledatabases')
+                ->onDelete("cascade");
             $table->date('fecha');
-            $table->integer('area');
+            $table->bigInteger('area')->unsigned();
+            $table->foreign('area')
+                ->references('id')
+                ->on('areas')
+                ->onDelete("cascade");
             $table->string('observaciones');
             $table->string('documento');
-            $table->integer('numInv');
-           // $table->integer('articulo');
+            $table->bigInteger('numInv')->unsigned();
+            $table->foreign('numInv')
+                ->references('id')
+                ->on('equipos')
+                ->onDelete("cascade");
+            // $table->integer('articulo');
             //$table->integer('descripcion');
             //$table->integer('marca');
             //$table->integer('modelo');
             //$table->integer('serie');
-           // $table->integer('fechaEntrada');
+            // $table->integer('fechaEntrada');
             //$table->integer('total');
             //$table->integer('monto');
             $table->integer('firma');

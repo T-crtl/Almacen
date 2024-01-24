@@ -32,7 +32,7 @@
                                     <tr>
                                         <th>No</th>
 
-
+                                        <th>Nomina</th>
                                         <th>Resguardatario</th>
                                         <th>Fecha Asignada</th>
                                         <th>Area</th>
@@ -58,13 +58,13 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
-
+                                            <td>{{ $consulta->cons->nomina }}</td>
                                             <td>{{ $consulta->cons->nombre }}</td>
                                             <td>{{ $consulta->fecha }}</td>
                                             <td>{{ $consulta->ubicacion->descripcion }}</td>
                                             <td>{{ $consulta->observaciones }}</td>
                                             <td>{{ $consulta->documento }}</td>
-                                            <td>{{ $consulta->equipo->numInv }}</td>
+                                            <td>{{ $consulta->equipo->id }}</td>
                                             <td>{{ $consulta->equipo->articulo }}</td>
                                             <td>{{ $consulta->equipo->descripcion }}</td>
                                             <td>{{ $consulta->equipo->marca }}</td>

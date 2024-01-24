@@ -2,6 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
+
                 <div class="card">
                     <div class="card-header" style="height: 100%">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -9,6 +10,7 @@
                             <span id="card_title">
                                 {{ __('Equipo') }}
                             </span>
+
 
                             <div class="float-right">
                                 <!--- ====================      BOTON DE IMPORTAR EXCEL / FORM    ==================== -->
@@ -38,13 +40,26 @@
                     @endif
 
                     <div class="card-body">
+                            <form action="{{ route('equipos.buscar') }}" method="get">
+                                @csrf
+                                <div class="form-row">
+                                    <div class="form-group col-md-4">
+                                        <label for="query">Buscador</label>
+                                        <input type="text" class="form-control" id="query" name="query">
+                                    </div>
+                                    <!-- Pendiente revisar Buscador -->
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Buscar</button>
+                            </form>
+
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
 
-                                        <th>Numero de Inventario</th>
+
                                         <th>Descripcion</th>
                                         <th>Marca</th>
                                         <th>Modelo</th>
@@ -60,43 +75,58 @@
                                         <th></th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    @foreach ($equipos as $equipo)
-                                        <tr>
-                                            <td>{{ ++$i }}</td>
+                                @if (isset($resultados))
+                                    <!-- Muestra los resultados de la búsqueda -->
+                                    <tbody>
+                                        @foreach ($resultados as $resultado)
+                                            <tr>
+                                                <td>{{ ++$i }}</td>
+                                                <td>{{ $resultado->descripcion }}</td>
+                                                <td>{{ $resultado->marca }}</td>
+                                                <!-- Agrega más columnas según sea necesario -->
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                @else
+                                    <tbody>
+                                        @foreach ($equipos as $equipo)
+                                            <tr>
+                                                <td>{{ ++$i }}</td>
 
-                                            <td>{{ $equipo->numInv }}</td>
-                                            <td>{{ $equipo->descripcion }}</td>
-                                            <td>{{ $equipo->marca }}</td>
-                                            <td>{{ $equipo->modelo }}</td>
-                                            <td>{{ $equipo->serie }}</td>
-                                            <td>{{ $equipo->precio }}</td>
-                                            <td>{{ $equipo->fechaEntrada }}</td>
-                                            <td>{{ $equipo->estatus }}</td>
-                                            <td>{{ $equipo->articulo }}</td>
-                                            <td>{{ $equipo->rutaImg }}</td>
-                                            <td>{{ $equipo->tipoAdq }}</td>
-                                            <td>{{ $equipo->areas->descripcion }}</td>
 
-                                            <td>
-                                                <form action="{{ route('equipos.destroy', $equipo->id) }}"
-                                                    method="POST">
-                                                    <a class="btn btn-sm btn-primary ver"
-                                                        data-url="{{ route('equipos.show', $equipo->id) }}">
-                                                        <i class="fa fa-fw fa-eye"></i> {{ __('Mostrar') }}</a>
-                                                    <a class="btn btn-sm btn-success ver"
-                                                        data-url="{{ route('equipos.edit', $equipo->id) }}">
-                                                        <i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm">
-                                                        <i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
-                                                </form>
+                                                <td>{{ $equipo->descripcion }}</td>
+                                                <td>{{ $equipo->marca }}</td>
+                                                <td>{{ $equipo->modelo }}</td>
+                                                <td>{{ $equipo->serie }}</td>
+                                                <td>{{ $equipo->precio }}</td>
+                                                <td>{{ $equipo->fechaEntrada }}</td>
+                                                <td>{{ $equipo->estatus }}</td>
+                                                <td>{{ $equipo->articulo }}</td>
+                                                <td>{{ $equipo->rutaImg }}</td>
+                                                <td>{{ $equipo->tipoAdq }}</td>
+                                                <td>{{ $equipo->areas->descripcion }}</td>
 
-                                            </td>
-                                        </tr>
-                                    @endforeach
-                                </tbody>
+                                                <td>
+                                                    <form action="{{ route('equipos.destroy', $equipo->id) }}"
+                                                        method="POST">
+                                                        <a class="btn btn-sm btn-primary ver"
+                                                            data-url="{{ route('equipos.show', $equipo->id) }}">
+                                                            <i class="fa fa-fw fa-eye"></i> {{ __('Mostrar') }}</a>
+                                                        <a class="btn btn-sm btn-success ver"
+                                                            data-url="{{ route('equipos.edit', $equipo->id) }}">
+                                                            <i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger btn-sm">
+                                                            <i class="fa fa-fw fa-trash"></i>
+                                                            {{ __('Eliminar') }}</button>
+                                                    </form>
+
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                @endif
                             </table>
                         </div>
                     </div>

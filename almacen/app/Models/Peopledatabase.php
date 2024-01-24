@@ -34,6 +34,7 @@ class Peopledatabase extends Model
 		'adscripcion' => 'required',
 		'tipo_contrato' => 'required',
 		'funcion' => 'required',
+    'password' => 'required',
 		'correo' => 'required',
     'foto' => 'required',
 		'estatus' => 'required',
@@ -48,7 +49,7 @@ class Peopledatabase extends Model
      *
      * @var array
      */
-    protected $fillable = ['nomina','nombre','adscripcion','tipo_contrato','funcion','correo','foto','estatus','nivel_educativo','plantelID'];
+    protected $fillable = ['nomina','nombre','adscripcion','tipo_contrato','funcion', 'password', 'correo','foto','estatus','nivel_educativo','plantelID'];
 
     public function campus()
     {

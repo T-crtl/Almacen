@@ -35,7 +35,7 @@ class Consulta extends Model
 {
     
     static $rules = [
-		'registro' => 'required',
+		'nomina' => 'required',
 		'resguardatario' => 'required',
 		'fecha' => 'required',
 		'area' => 'required',
@@ -61,15 +61,16 @@ class Consulta extends Model
      *
      * @var array
      */
-    protected $fillable = ['registro','resguardatario','fecha','area','observaciones','documento','numInv','articulo','descripcion','marca','modelo','serie','fechaEntrada','total','monto','firma','inventarios'];
+    protected $fillable = ['nomina','resguardatario','fecha','area','observaciones','documento','numInv','articulo','descripcion','marca','modelo','serie','fechaEntrada','total','monto','firma','inventarios'];
 
 	public function cons()
 	{
 		return $this->hasOne('App\Models\Peopledatabase', 'id', 'resguardatario');
+		return $this->hasOne('App\Models\Peopledatabase', 'id', 'nomina');
 	}
 	public function equipo()
 	{
-		return $this->hasOne('App\Models\Equipo', 'id', 'numInv');
+		return $this->hasOne('App\Models\Equipo', 'id', 'id');
 		return $this->hasOne('App\Models\Equipo', 'id', 'articulo');
 		return $this->hasOne('App\Models\Equipo', 'id', 'descripcion');
 		return $this->hasOne('App\Models\Equipo', 'id', 'marca');

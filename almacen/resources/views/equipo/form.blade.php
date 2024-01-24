@@ -1,11 +1,7 @@
 <div class="box box-info padding-1">
     <div class="box-body">
         
-        <div class="form-group">
-            {{ Form::label('numInv') }}
-            {{ Form::text('numInv', $equipo->numInv, ['class' => 'form-control' . ($errors->has('numInv') ? ' is-invalid' : ''), 'placeholder' => 'Numinv']) }}
-            {!! $errors->first('numInv', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
+        
         <div class="form-group">
             {{ Form::label('descripcion') }}
             {{ Form::text('descripcion', $equipo->descripcion, ['class' => 'form-control' . ($errors->has('descripcion') ? ' is-invalid' : ''), 'placeholder' => 'Descripcion']) }}
@@ -33,7 +29,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('fechaEntrada') }}
-            {{ Form::text('fechaEntrada', $equipo->fechaEntrada, ['class' => 'form-control' . ($errors->has('fechaEntrada') ? ' is-invalid' : ''), 'placeholder' => 'Fechaentrada']) }}
+            {{ Form::text('fechaEntrada', $equipo->fechaEntrada, ['class' => 'form-control' . ($errors->has('fechaEntrada') ? ' is-invalid' : ''), 'placeholder' => 'Fecha entrada']) }}
             {!! $errors->first('fechaEntrada', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -48,17 +44,17 @@
         </div>
         <div class="form-group">
             {{ Form::label('rutaImg') }}
-            {{ Form::text('rutaImg', $equipo->rutaImg, ['class' => 'form-control' . ($errors->has('rutaImg') ? ' is-invalid' : ''), 'placeholder' => 'Rutaimg']) }}
+            {{ Form::text('rutaImg', $equipo->rutaImg, ['class' => 'form-control' . ($errors->has('rutaImg') ? ' is-invalid' : ''), 'placeholder' => 'Foto']) }}
             {!! $errors->first('rutaImg', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('tipoAdq') }}
-            {{ Form::text('tipoAdq', $equipo->tipoAdq, ['class' => 'form-control' . ($errors->has('tipoAdq') ? ' is-invalid' : ''), 'placeholder' => 'Tipoadq']) }}
+            {{ Form::text('tipoAdq', $equipo->tipoAdq, ['class' => 'form-control' . ($errors->has('tipoAdq') ? ' is-invalid' : ''), 'placeholder' => 'Tipo de adquisicion']) }}
             {!! $errors->first('tipoAdq', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('areaId') }}
-            {{ Form::select('areaId', $areas, $equipo->areaId, ['class' => 'form-control' . ($errors->has('areaId') ? ' is-invalid' : ''), 'placeholder' => 'Areaid']) }}
+            {{ Form::select('areaId', $areas, $equipo->areaId, ['class' => 'form-control' . ($errors->has('areaId') ? ' is-invalid' : ''), 'placeholder' => 'Area']) }}
             {!! $errors->first('areaId', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 

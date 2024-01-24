@@ -16,18 +16,18 @@ class EquipoImport implements ToModel
     {
         return new Equipo([
             'id' => 0,
-            'numInv' => $row[1], //B
-            'descripcion' => $row[2], //C
-            'marca' => $row[3], //D
-            'modelo' => $row[4],  //E
-            'serie' => $row[5],  //F
-            'precio' => $row[6],
-            'fechaEntrada' =>  $row[7],
-            'estatus' => $row[8],
-            'articulo' => $row[9],
-            'rutaImg' => $row[10],
-            'tipoAdq' => $row[11],
-            'areaId' => $row[12],
+            //'numInv' => $row[1], //B
+            'descripcion' => $row[1], //C
+            'marca' => $row[2], //D
+            'modelo' => $row[3],  //E
+            'serie' => $row[4],  //F
+            'precio' => $row[5],
+            'fechaEntrada' =>  $row[6],
+            'estatus' => $row[7],
+            'articulo' => $row[8],
+            'rutaImg' => $row[9],
+            'tipoAdq' => $row[10],
+            'areaId' => $row[11],
         ]);
     }
 }

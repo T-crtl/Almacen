@@ -15,7 +15,7 @@ return new class extends Migration
 
         Schema::create('equipos', function (Blueprint $table) {
             $table->id();
-            $table->integer('numInv');
+            //$table->integer('numInv');
             $table->string('descripcion', 150);
             $table->string('marca', 50);
             $table->string('modelo', 30);

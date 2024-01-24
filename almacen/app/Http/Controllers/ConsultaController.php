@@ -36,12 +36,13 @@ class ConsultaController extends Controller
     public function create()
     {
         $consulta = new Consulta();
-        $nombre = Peopledatabase::pluck('nombre', 'id');
-        $equipo = Equipo::pluck('numInv', 'id');
+        $nominas = Peopledatabase::pluck('nomina', 'id');
+        $nombres = Peopledatabase::pluck('nombre', 'id');
+        $equipos = Equipo::pluck('id', 'id');
         $firmas = Firma::pluck('NombrePersonal', 'id');
         $areas = Area::pluck('descripcion', 'id');
         //$firmas2 = Firma::pluck('NombrePersonal', 'id');
-        return view('consulta.create', compact('consulta', 'nombre', 'equipo', 'firmas', 'areas'));
+        return view('consulta.create', compact('consulta', 'nombres', 'equipos', 'firmas', 'areas', 'nominas'));
     }
 
     /**
@@ -115,4 +116,13 @@ class ConsultaController extends Controller
         return redirect()->route('consultas.index')
             ->with('success', 'Consulta deleted successfully');
     }
-}
+    public function obtenerResguardatarios($nominaId)
+    {
+    // Lógica para obtener resguardatarios según la nominaId
+    $resguardatarios = Consulta::where('nomina', $nominaId)->pluck('resguardatario', 'id'); // Tu lógica aquí para obtener resguardatarios
+
+        return response()->json($resguardatarios);
+    }
+
+}   
+

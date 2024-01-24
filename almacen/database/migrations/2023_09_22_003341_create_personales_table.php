@@ -24,10 +24,10 @@ return new class extends Migration
             $table->string('estatus');
             $table->string('nivel_educativo', 25);
             $table->integer('plantelID')->unsigned(); // Campo Relacional
-            //$table->foreign('PlantelID')
-                //->references('id')
-               // ->on('campuses') //Llave foranea
-                //->onDelete("cascade"); 
+            $table->foreign('PlantelID')
+                ->references('id')
+               ->on('campuses') //Llave foranea
+                ->onDelete("cascade"); 
             $table->timestamps();
         });
     }

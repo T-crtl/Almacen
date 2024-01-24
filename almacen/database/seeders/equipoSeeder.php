@@ -17,7 +17,7 @@ class equipoSeeder extends Seeder
         $fechaEspecifica = Carbon::createFromDate(2000, 4, 24);
         //
         Equipo::create([
-            'numInv' => 1,
+            //'numInv' => 1,
             'descripcion' => 'Fuente 23v',
             'marca' => 'Sony',
             'modelo' => '2013',
@@ -32,7 +32,7 @@ class equipoSeeder extends Seeder
         ]);
         $fechaEspecifica = Carbon::createFromDate(2001, 3, 24);
         Equipo::create([
-            'numInv' => 2,
+            //'numInv' => 2,
             'descripcion' => 'SILLA',
             'marca' => 'VAN BEUREN',
             'modelo' => ' ',
@@ -47,7 +47,7 @@ class equipoSeeder extends Seeder
         ]);
         $fechaEspecifica = Carbon::createFromDate(2010, 2, 10);
         Equipo::create([
-            'numInv' => 3,
+            //'numInv' => 3,
             'descripcion' => 'ARCHIVERO',
             'marca' => 'PM-STEELE',
             'modelo' => ' ',
@@ -62,7 +62,7 @@ class equipoSeeder extends Seeder
         ]);
         $fechaEspecifica = Carbon::createFromDate(2012, 4, 11);
         Equipo::create([
-            'numInv' => 4,
+           // 'numInv' => 4,
             'descripcion' => 'VITRINA',
             'marca' => 'PM-STEELE',
             'modelo' => ' ',

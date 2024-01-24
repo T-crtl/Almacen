@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Equipo;
 use App\Models\Area;
 use Illuminate\Http\Request;
@@ -38,6 +39,7 @@ class EquipoController extends Controller
     {
         $equipo = new Equipo();
         $areas = Area::pluck('descripcion', 'id');
+        //$tipo_adquisicion = 
         return view('equipo.create', compact('equipo', 'areas'));
     }
 
@@ -52,7 +54,7 @@ class EquipoController extends Controller
         request()->validate(Equipo::$rules);
 
         $equipo = Equipo::create($request->all());
-        
+
         return redirect()->route('home');
 
         // return redirect()->route('equipos.index')
@@ -142,4 +144,19 @@ class EquipoController extends Controller
         // return redirect()->route('equipos.index')
         //     ->with('success', 'Excel cargado correctamente.');
     }
+
+    public function buscar(Request $request)
+{
+    $query = $request->input('query');
+
+    // Utiliza el método where para aplicar condiciones de búsqueda
+    $equipos = Equipo::where('descripcion', 'LIKE', '%' . $query . '%')
+        ->orWhere('marca', 'LIKE', '%' . $query . '%')
+        ->paginate(); // Agrega paginación si es necesario
+
+    return view('equipo.index', compact('equipos'))
+        ->with('i', (request()->input('page', 1) - 1) * $equipos->perPage())
+        ->with('query', $query); // Pasa el término de búsqueda a la vista
+}
+
 }

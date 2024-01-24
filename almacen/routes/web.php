@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Auth::routes();
 //tablas
+Route::get('/equipos/buscar', [App\Http\Controllers\EquipoController::class, 'buscar'])->name('equipos.buscar');
+
 Route::resource('equipos', App\Http\Controllers\equipoController::class)->middleware('auth');
 Route::resource('edificios', App\Http\Controllers\EdificioController::class)->middleware('auth');
 Route::resource('campuses', App\Http\Controllers\CampusController::class)->middleware('auth');
@@ -34,6 +36,8 @@ Route::resource('trasladoArticulo', App\Http\Controllers\TrasladoArticuloControl
 
 //consultas
 Route::get('/consultas/resguardo', [App\Http\Controllers\HomeController::class, 'resguardo'])->name('resguardo');
+
+Route::get('/obtener-resguardatarios/{nominaId}', 'App\Http\Controllers\ConsultaController@obtenerResguardatarios');
 
 Route::post('/loginxsiic', [App\Http\Controllers\LoginCetiController::class, 'login'])->name('loginxsiic');
 Route::get('/loginxsiic/{a}', [App\Http\Controllers\LoginCetiController::class, 'entrar'])->name('loginxsiic.entrar');

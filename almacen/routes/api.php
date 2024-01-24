@@ -25,3 +25,6 @@ Route::name('usuarios.')->prefix('usuarios')->group(function () {
     Route::put('update/{user}', [UsuariosController::class, 'update'])->name('update');
     Route::delete('delete/{user}', [UsuariosController::class, 'delete'])->name('delete');
 });
+
+//api regrese datos paso 1
+//tomar paso api y mandarlos a la vista paso 2

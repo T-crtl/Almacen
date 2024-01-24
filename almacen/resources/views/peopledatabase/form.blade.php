@@ -1,11 +1,5 @@
 <div class="box box-info padding-1">
     <div class="box-body">
-
-        <div class="form-group">
-            {{ Form::label('registro') }}
-            {{ Form::text('registro', $peopledatabase->registro, ['class' => 'form-control' . ($errors->has('registro') ? ' is-invalid' : ''), 'placeholder' => 'Rregistro']) }}
-            {!! $errors->first('registro ', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
         
         <div class="form-group">
             {{ Form::label('nomina') }}
@@ -32,6 +26,13 @@
             {{ Form::text('funcion', $peopledatabase->funcion, ['class' => 'form-control' . ($errors->has('funcion') ? ' is-invalid' : ''), 'placeholder' => 'Funcion']) }}
             {!! $errors->first('funcion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+
+        <div class="form-group">
+            {{ Form::label('password') }}
+            {{ Form::text('password', $peopledatabase->funcion, ['class' => 'form-control' . ($errors->has('password') ? ' is-invalid' : ''), 'placeholder' => 'Password']) }}
+            {!! $errors->first('password', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        
         <div class="form-group">
             {{ Form::label('correo') }}
             {{ Form::text('correo', $peopledatabase->correo, ['class' => 'form-control' . ($errors->has('correo') ? ' is-invalid' : ''), 'placeholder' => 'Correo']) }}

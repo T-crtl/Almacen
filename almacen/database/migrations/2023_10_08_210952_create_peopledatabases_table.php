@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('peopledatabases', function (Blueprint $table) {
                 $table->id();
-                $table->bigInteger('registro');
                 $table->integer('nomina');
                 $table->string('nombre', 100);
                 $table->string('adscripcion');
@@ -25,10 +24,10 @@ return new class extends Migration
                 $table->string('foto');
                 $table->string('estatus');
                 $table->string('nivel_educativo', 25);
-                //$table->foreign('PlantelID')
-                    //->references('id')
-                   // ->on('campuses') //Llave foranea
-                    //->onDelete("cascade"); 
+                $table->foreign('PlantelID')
+                    ->references('id')
+                    ->on('campuses') //Llave foranea
+                    ->onDelete("cascade"); 
                 $table->timestamps();
             });
     }

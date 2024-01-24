@@ -12,7 +12,7 @@ class personaleSeeder extends Seeder
     {
         //
         Peopledatabase::create([
-            'registro' => 20110067,
+            //'registro' => 20110067,
             'nomina' => 123,
             'nombre' => 'Cesar Duran',
             'adscripcion' => 'Estudiante',
@@ -26,7 +26,7 @@ class personaleSeeder extends Seeder
             'nivel_educativo' => 'ingenieria',
         ]);
         Peopledatabase::create([
-            'registro' => 19100456,
+           // 'registro' => 19100456,
             'nomina' => 231,
             'nombre' => 'David Gutierrez',
             'adscripcion' => 'Desarrollador',
@@ -40,7 +40,7 @@ class personaleSeeder extends Seeder
             'nivel_educativo' => 'licenciatura',
         ]);
         Peopledatabase::create([
-            'registro' => 19100426,
+            //'registro' => 19100426,
             'nomina' => 231,
             'nombre' => 'Francisco Montano',
             'adscripcion' => 'Administrador',
@@ -54,7 +54,7 @@ class personaleSeeder extends Seeder
             'nivel_educativo' => 'licenciatura',
         ]);
         Peopledatabase::create([
-            'registro' => 19100451,
+            //'registro' => 19100451,
             'nomina' => 1212,
             'nombre' => 'Panchito',
             'adscripcion' => 'Conserje',
@@ -68,7 +68,7 @@ class personaleSeeder extends Seeder
             'nivel_educativo' => 'Secundaria',
         ]);
         Peopledatabase::create([
-            'registro' => 19100454,
+            //'registro' => 19100454,
             'nomina' => 3131,
             'nombre' => 'Adrian',
             'adscripcion' => 'Coordinador',
@@ -82,7 +82,7 @@ class personaleSeeder extends Seeder
             'nivel_educativo' => 'Ingenieria',
         ]);
         Peopledatabase::create([
-            'registro' => 19100446,
+            //'registro' => 19100446,
             'nomina' => 3131,
             'nombre' => 'Pepe',
             'adscripcion' => 'Director',
@@ -96,7 +96,7 @@ class personaleSeeder extends Seeder
             'nivel_educativo' => 'Ingenieria',
         ]);
         Peopledatabase::create([
-            'registro' => 19100446,
+            //'registro' => 19100446,
             'nomina' => 1212,
             'nombre' => 'Jose Ramon',
             'adscripcion' => 'Coordinador',
@@ -110,7 +110,7 @@ class personaleSeeder extends Seeder
             'nivel_educativo' => 'Ingenieria',
         ]);
         Peopledatabase::create([
-            'registro' => 17100446,
+            //'registro' => 17100446,
             'nomina' => 2131,
             'nombre' => 'Norma Gonzales',
             'adscripcion' => 'Profesor',
@@ -124,7 +124,7 @@ class personaleSeeder extends Seeder
             'nivel_educativo' => 'Maestria',
         ]);
         Peopledatabase::create([
-            'registro' => 19104446,
+            //'registro' => 19104446,
             'nomina' => 2131,
             'nombre' => 'Jose Luis Hernandez',
             'adscripcion' => 'Profesor',
@@ -138,7 +138,7 @@ class personaleSeeder extends Seeder
             'nivel_educativo' => 'Maestria',
         ]);
         Peopledatabase::create([
-            'registro' => 19111446,
+            //'registro' => 19111446,
             'nomina' => 2131,
             'nombre' => 'Pablo Orozco',
             'adscripcion' => 'Arquitecto',
